@@ -31,8 +31,8 @@ if (!empty($_POST['plusDeFilm'])) {
 
 <div class="container">
   <div class="row">
-    <form class="" action="" method="post">
-    <div class="choixchoix">
+    <form class="choixchoix hide" action="" method="post">
+    <div class="">
 
 
         <label for="usr">Recherche (acteur, directeur..) </label>
@@ -160,7 +160,7 @@ if (!empty($_POST['plusDeFilm'])) {
 
 
   <div class="col-lg-12 films" style="text-align : center">
-    <input type="button" name="buttonrecherche" value="RECHERCHE">
+    <input type="submit" name="buttonrecherche" value="RECHERCHE">
     <h4>Téma ça mon srab</h4>
     <?php if (!empty($_POST['plusDeFilm'])) { ?>
       <?php foreach ($randomId2 as $key): ?>
