@@ -165,13 +165,23 @@ if (!empty($_POST['plusDeFilm'])) {
     <?php if (!empty($_POST['plusDeFilm'])) { ?>
       <?php foreach ($randomId2 as $key): ?>
         <a href="single.php?slug=<?php echo($key['slug']);?>">
-          <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+          <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
+                  echo '<img src="posters/' .$key['id']. '.jpg" alt=""/>';
+                } else {
+                  echo '<img src="http://placehold.it/205x300" title="' .$key['title']. '">';
+                }
+          ?>
         </a>
       <?php endforeach; ?>
     <?php } else { ?>
       <?php foreach ($randomId as $key): ?>
         <a href="single.php?slug=<?php echo($key['slug']);?>">
-          <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+          <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
+                  echo '<img src="posters/' .$key['id']. '.jpg" alt=""/>';
+                } else {
+                  echo '<img src="http://placehold.it/205x300" title="' .$key['title']. '">';
+                }
+          ?>
         </a>
       <?php endforeach; ?>
     <?php } ?>

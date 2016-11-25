@@ -21,7 +21,12 @@
 
         <div class="col-lg-6 col-lg-offset-3">
           <h4><?php echo $movie['title'] ?></h4>
-          <img src="posters/<?php echo $movie['id'] ?>.jpg" alt="" class="imagesingle">
+          <?php if (file_exists('posters/' .$movie['id']. '.jpg')) {
+                  echo '<img src="posters/' .$movie['id']. '.jpg" alt=""/>';
+                } else {
+                  echo '<img src="http://placehold.it/205x300" title="' .$movie['title']. '">';
+                }
+          ?>
           <div class="infofilm col-lg-9">
             <h5> Infos du film : </h5>
             <hr>
