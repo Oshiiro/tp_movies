@@ -3,7 +3,7 @@
 
 <?php include ('include/header.php'); ?>
 
-<h1>gterhterherhterherht</h1>
+<h1></h1>
 
 
 
