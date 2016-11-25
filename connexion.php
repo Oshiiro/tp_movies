@@ -1,4 +1,4 @@
-<?php include 'include/pdo_local.php' ?>
+<?php include 'include/pdo.php' ?>
 <?php include 'include/functions.php' ?>
 
 <?php
@@ -87,7 +87,7 @@ if(!empty($_POST['submit'])) {
     <span class="error"><?php if (!empty($error['mdp'])) { echo ($error['mdp']); } ?></span><br>
 
     <input type="submit" name="submit" value="Se connecter !"><br>
-    <a href="forgot.php">Mot de passe oublié ?</a>
+    <a href="forgot.php">Mot de passe oublié ? (comme un con !)</a>
 
   </form>
 

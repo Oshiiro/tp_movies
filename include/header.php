@@ -31,7 +31,7 @@
 
             <form class="navbar-form navbar-left">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Trouver un film">
               </div>
               <button type="submit" class="btn btn-default">Recherche</button>
 

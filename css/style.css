@@ -67,6 +67,7 @@ h5 {
 }
 
 .noPointer{
+  /*ajouté par kilian : */
   cursor: text;
 }
 
