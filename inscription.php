@@ -106,6 +106,7 @@ if(!empty($_POST['submit'])) {
 <?php include 'include/header.php' ?>
 
 <div class="container col-lg-4 col-lg-offset-4">
+  <br><br>
   <div class="success" id="reponse_forminscription"></div>
   <form id="inscription" class="inscriptionAjax.php" action="" method="POST">
     <h4>Inscription</h4>
