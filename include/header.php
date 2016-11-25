@@ -42,6 +42,7 @@
                 echo '<li><a class="noPointer">Bienvenue '.$_SESSION['user']['pseudo'].'</a></li>';
               }
               ?>
+              <li> <a href="avoir.php">FILMS A VOIR!</a></li>
               <li> <a href="affiche.php">BACK OFFICE</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
