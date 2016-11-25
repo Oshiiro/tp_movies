@@ -19,7 +19,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Accueil</a>
+            <a class="navbar-brand" href="index.php">Accueil</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,6 +34,11 @@
               <button type="submit" class="btn btn-default">Recherche</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
+              <?php
+              if (isLogged()) {
+                echo '<li><a class="noPointer">Bienvenue '.$_SESSION['user']['pseudo'].'</a></li>';
+              }
+              ?>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-cogs" aria-hidden="true"></i>
@@ -43,7 +48,7 @@
                   <li><a href="inscription.php">Inscription</a></li>
                   <li><a href="connexion.php">Connexion</a></li>
                   <li role="separator" class="divider"></li>
-                  <li><a href="#">Deconnexion</a></li>
+                  <li><a href="deconnexion.php">Deconnexion</a></li>
                 </ul>
               </li>
             </ul>

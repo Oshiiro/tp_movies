@@ -19,3 +19,6 @@ text-align: center;}
 .films {
   padding : 30px;
 }
+.noPointer{
+  cursor: text;
+}

@@ -125,7 +125,7 @@ if(!empty($_POST['submit'])) {
     <label for="repeat">Repetez votre mot de passe :</label><br>
     <input type="password" name="repeat" value="<?php if (!empty($_POST['repeat'])) { echo ($_POST['repeat']); } ?>"><br>
     <span class="error"><?php if (!empty($error['repeat'])) { echo ($error['repeat']); } ?></span><br>
-
+    
     <input type="submit" name="submit" value="Créer !">
   </form>
 </div>
