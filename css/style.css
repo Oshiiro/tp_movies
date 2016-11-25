@@ -1,3 +1,21 @@
-h1 {
-  color: blue;
+.choix {
+  padding-top: 10px;
+  height: 55px;
+  width: 100%;
+  background-color: silver;
+}
+
+.btn-group > .btn, .btn-group-vertical > .btn {
+width: 200px;}
+
+img {
+height: 280px;
+width : auto;
+}
+
+.choixchoix {
+text-align: center;}
+
+.films {
+  padding : 30px;
 }
