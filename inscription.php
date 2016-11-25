@@ -108,28 +108,30 @@ if(!empty($_POST['submit'])) {
 
 <?php include 'include/header.php' ?>
 
-<div class="container">
+<div class="container col-lg-4 col-lg-offset-4">
   <div class="success" id="reponse_forminscription"></div>
   <form id="inscription" class="inscriptionAjax.php" action="" method="POST">
-    <h1>Inscription</h1>
+    <h4>Inscription</h4>
 
     <label for="pseudo">Pseudo :</label><br>
-    <input type="text" name="pseudo" value="<?php if (!empty($_POST['pseudo'])) { echo ($_POST['pseudo']); } ?>"><br>
+    <input type="text" class="form-control" name="pseudo" value="<?php if (!empty($_POST['pseudo'])) { echo ($_POST['pseudo']); } ?>"><br>
     <span class="error"><?php if (!empty($error['pseudo'])) { echo ($error['pseudo']); } ?></span><br>
 
     <label for="email">E-mail :</label><br>
-    <input type="email" name="email" value="<?php if (!empty($_POST['email'])) { echo ($_POST['email']); } ?>"><br>
+    <input type="email" class="form-control" name="email" value="<?php if (!empty($_POST['email'])) { echo ($_POST['email']); } ?>"><br>
     <span class="error"><?php if (!empty($error['email'])) { echo ($error['email']); } ?></span><br>
 
     <label for="password">Mot de passe :</label><br>
-    <input type="password" name="password" value="<?php if (!empty($_POST['password'])) { echo ($_POST['password']); } ?>"><br>
+    <input type="password" class="form-control" name="password" value="<?php if (!empty($_POST['password'])) { echo ($_POST['password']); } ?>"><br>
     <span class="error"><?php if (!empty($error['password'])) { echo ($error['password']); } ?></span><br>
 
     <label for="repeat">Repetez votre mot de passe :</label><br>
-    <input type="password" name="repeat" value="<?php if (!empty($_POST['repeat'])) { echo ($_POST['repeat']); } ?>"><br>
+    <input type="password"  class="form-control" name="repeat" value="<?php if (!empty($_POST['repeat'])) { echo ($_POST['repeat']); } ?>"><br>
     <span class="error"><?php if (!empty($error['repeat'])) { echo ($error['repeat']); } ?></span><br>
 
-    <input type="submit" name="submit" value="Créer !">
+
+    <input type="submit" name="submit" class="submitInsc btn" value="Créer !">
+
   </form>
 </div>
 

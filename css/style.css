@@ -17,14 +17,13 @@ color: white;
   color : white;
 }
 
+/* INDEX */
 h4 {
 color : black;
 font-weight: bolder;
 font-size: 25px;
 font-family: courier;
 border-bottom: 1px dotted black;}
-
-
 
 .btn-group > .btn, .btn-group-vertical > .btn {
 width: 200px;}
@@ -85,9 +84,7 @@ color : white;
 }
 
 
-
-
-
+/* MENU DEROULANT*/
 
 .categories {
 overflow: hidden;
@@ -120,3 +117,14 @@ transition: all 1.5s ease 0.15s; }
 z-index: 1;
 background-color: rgb(92, 184, 92);
 height: 300px; }
+
+/* INSCRIPTION */
+
+label {
+font-family: courier;}
+
+.submitInsc  {
+  width: 150px;
+  background-color: rgb(92, 184, 92);
+  margin : 20px;
+}
