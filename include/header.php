@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/font-awesome.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
-    <title>Movies</title>
+    <title>BEST MOVIES EVER</title>
   </head>
   <body>
     <header>
@@ -19,14 +19,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Movies</a>
+            <a class="navbar-brand" href="#">BEST MOVIES EVER</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            </ul>
+          
             <form class="navbar-form navbar-left">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search">

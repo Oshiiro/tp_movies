@@ -118,11 +118,12 @@
 <img src="posters/4256.jpg" alt="">
 </div>
 
-
+<div class="choix col-lg-12">
 <div class="boutonrandom col-lg-12" style="text-align : center">
   <button type="button" class="btn btn-success">
-    + De FILM <span class="caret"></span>
+    + De FILM 
   </button>
+</div>
 </div>
 
 

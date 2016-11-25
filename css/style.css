@@ -1,3 +1,18 @@
+/* HEADER ;*/
+
+.container-fluid {
+background-color: orange;
+}
+
+.navbar-default .navbar-brand  {
+color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color : white;
+}
+
+
 .choix {
   padding-top: 10px;
   height: 55px;
