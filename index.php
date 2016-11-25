@@ -23,111 +23,87 @@ if (!empty($_POST['plusDeFilm'])) {
  ?>
 <?php include ('include/header.php'); ?>
 
+<div class="choixchoix col-lg-6 col-lg-offset-3">
 
-<div class="choix col-lg-12">
-  <div class="choixchoix col-lg-6 col-lg-offset-3">
+  <div class ="categories col-lg-4" >
+        <h4> Catégories </h4>
+        <br>
+        <p> Action </p>
+        <p> Action </p>
+        <p> Action </p>
+        <p> Action </p>
+        <p> Action </p>
+        <p> Action </p>
+  </div>
 
-    <div class ="categories col-lg-4">
-      <div class="btn-group">
-      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Catégories <span class="caret"></span>
-      </button>
-        <ul class="dropdown-menu">
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Option 1</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Option 2</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Option 2</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Option 2</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Option 2</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Option 2</label>
-          </div>
-          <div class="checkbox disabled">
-            <label><input type="checkbox" value="" disabled>Option 3</label>
-          </div>
-        </ul>
-      </div>
-    </div>
-
-    <div class="annees col-lg-4">
-      <div class="btn-group">
-        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Années <span class="caret"></span>
-        </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">2016</a></li>
-            <li><a href="#">2015</a></li>
-            <li><a href="#">2014</a></li>
-          </ul>
-      </div>
-    </div>
-
-    <div class="classement col-lg-4">
-
-        <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Catégories <span class="caret"></span>
-        </button>
-          <ul class="dropdown-menu">
-        <label><input type="checkbox" value="">
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-        </label>
+  <div class ="annees col-lg-4" >
+        <h4> Années </h4>
+        <br>
+        <p> 2016 </p>
+        <p> 2010 </p>
+        <p> 2000 </p>
+        <p> 1990 </p>
+        <p> 1980 </p>
+        <p> 1970 </p>
+  </div>
 
 
-        <label><input type="checkbox" value="">
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-        </label>
+  <div class="classement col-lg-4">
+    <h4>Classement</h4>
+    <ul class="dropdown-menu">
+    <label><input type="checkbox" value="">
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+    </label>
 
 
-        <label><input type="checkbox" value="">
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-        </label>
+    <label><input type="checkbox" value="">
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+    </label>
 
 
-        <label><input type="checkbox" value="">
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star-o" aria-hidden="true"></i>
-        </label>
+    <label><input type="checkbox" value="">
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+    </label>
 
 
-        <label><input type="checkbox" value="">
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-          <i class="fa fa-star" aria-hidden="true"></i>
-        </label>
-      </div>
-    </div>
-  </div> <!-- Div CHOIXCHOIX -->
-</div> <!-- Div CHOIX -->
+    <label><input type="checkbox" value="">
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star-o" aria-hidden="true"></i>
+    </label>
+
+
+    <label><input type="checkbox" value="">
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+      <i class="fa fa-star" aria-hidden="true"></i>
+    </label>
+  </div>
+
+
+
+</div> <!-- Div CHOIXCHOIX -->
+
 <!-- Notes -->
 
 <div class="col-lg-8 col-lg-offset-2 films" style="text-align : center">
+  <h4>Téma ça mon srab</h4>
   <?php if (!empty($_POST['plusDeFilm'])) { ?>
     <?php foreach ($randomId2 as $key): ?>
       <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
@@ -139,11 +115,13 @@ if (!empty($_POST['plusDeFilm'])) {
   <?php } ?>
 </div>
 
-<form action="" method="post">
-  <div class="boutonrandom col-lg-12" style="text-align : center">
-    <input type="submit" name="plusDeFilm" class="btn btn-success" value="+ De FILM">
-  </div>
-</form>
+<div class="choix col-lg-12">
+  <form action="" method="post">
+    <div class="boutonrandom col-lg-12" style="text-align : center">
+      <input type="submit" name="plusDeFilm" class="btn btn-success" value="+ De FILM">
+    </div>
+  </form>
+</div>
 
 
 
