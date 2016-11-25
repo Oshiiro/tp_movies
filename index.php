@@ -3,6 +3,7 @@
 
 <?php include ('include/header.php'); ?>
 
+
 <div class="choix col-lg-6">
 <div class ="categories col-lg-4">
   <h2> Catégories </h2>
@@ -98,6 +99,8 @@
 <img src="posters/4256.jpg" alt="">
 <button type="button" name="button">+ de films !</button>
 </div>
+
+
 
 
 
