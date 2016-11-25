@@ -20,5 +20,6 @@ text-align: center;}
   padding : 30px;
 }
 .noPointer{
+  /*ajouté par kilian : */
   cursor: text;
 }
