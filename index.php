@@ -2,6 +2,7 @@
 <?php include ('include/functions.php'); ?>
 <?php
 
+// traitement du randow
 $sql = "SELECT id FROM `movies_full`
         ORDER BY RAND()
         LIMIT 5";
@@ -9,6 +10,16 @@ $sql = "SELECT id FROM `movies_full`
   $query->execute();
   $randomId = $query->fetchAll();
 
+
+// traitement du bouton + de film
+if (!empty($_POST['plusDeFilm'])) {
+  $sql = "SELECT id FROM `movies_full`
+          ORDER BY RAND()
+          LIMIT 5";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $randomId2 = $query->fetchAll();
+}
  ?>
 <?php include ('include/header.php'); ?>
 
@@ -119,17 +130,22 @@ $sql = "SELECT id FROM `movies_full`
 <!-- Notes -->
 
 <div class="col-lg-8 col-lg-offset-2 films" style="text-align : center">
-  <?php foreach ($randomId as $key): ?>
-    <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
-  <?php endforeach; ?>
+  <?php if (!empty($_POST['plusDeFilm'])) { ?>
+    <?php foreach ($randomId2 as $key): ?>
+      <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+    <?php endforeach; ?>
+  <?php } else { ?>
+    <?php foreach ($randomId as $key): ?>
+      <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+    <?php endforeach; ?>
+  <?php } ?>
 </div>
 
-
-<div class="boutonrandom col-lg-12" style="text-align : center">
-  <button type="button" class="btn btn-success">
-    + De FILM <span class="caret"></span>
-  </button>
-</div>
+<form action="" method="post">
+  <div class="boutonrandom col-lg-12" style="text-align : center">
+    <input type="submit" name="plusDeFilm" class="btn btn-success" value="+ De FILM">
+  </div>
+</form>
 
 
 
