@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include ('include/pdo.php'); ?>
 <?php include ('include/functions.php'); ?>
 <?php
@@ -134,5 +135,4 @@ $sql = "SELECT id FROM `movies_full`
 
 
 
-
-<?php include ('include/footer.php'); ?>
+<?php include 'include/footer.php'; ?>
