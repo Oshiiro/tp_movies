@@ -16,7 +16,7 @@ function generateRandomString($length = 10) {
 }
 
 function isLogged(){
- if((!empty($_SESSION['user'])) && (!empty($_SESSION['user']['id'])) && (!empty($_SESSION['user']['pseudo'])) && (!empty($_SESSION['user']['role'])) && (!empty($_SESSION['user']['ip']))) {
+ if((!empty($_SESSION['user'])) && (!empty($_SESSION['user']['id'])) && (!empty($_SESSION['user']['pseudo'])) && (!empty($_SESSION['user']['status'])) && (!empty($_SESSION['user']['ip']))) {
 
    $ip = $_SERVER['REMOTE_ADDR'];
    if($ip == $_SESSION['user']['ip']){
