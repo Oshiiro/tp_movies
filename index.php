@@ -32,8 +32,9 @@ if (!empty($_POST['plusDeFilm'])) {
 <div class="choixchoix col-lg-6 col-lg-offset-3">
 
   <div class ="categories col-lg-4" >
-        <h4> Catégories </h4>
+    <h4> Catégories </h4>
         <br>
+
         <p> Action </p>
         <p> Action </p>
         <p> Action </p>
@@ -56,44 +57,44 @@ if (!empty($_POST['plusDeFilm'])) {
 
   <div class="classement col-lg-4">
     <h4>Classement</h4>
-    <ul class="dropdown-menu">
-    <label><input type="checkbox" value="">
+    <br>
+    <label>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
-    </label>
+    </label><br>
 
 
-    <label><input type="checkbox" value="">
+    <label>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
-    </label>
+    </label><br>
 
 
-    <label><input type="checkbox" value="">
+    <label>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
-    </label>
+    </label><br>
 
 
-    <label><input type="checkbox" value="">
+    <label>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star-o" aria-hidden="true"></i>
-    </label>
+    </label><br>
 
 
-    <label><input type="checkbox" value="">
+    <label>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
       <i class="fa fa-star" aria-hidden="true"></i>
@@ -103,33 +104,29 @@ if (!empty($_POST['plusDeFilm'])) {
   </div>
 
 
+  <div class="col-lg-12 films" style="text-align : center">
+    <h4>Téma ça mon srab</h4>
+    <a href="single.php">  <?php if (!empty($_POST['plusDeFilm'])) { ?>
+      <?php foreach ($randomId2 as $key): ?>
+        <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+      <?php endforeach; ?>
+      <?php } else { ?>
+        <?php foreach ($randomId as $key): ?>
+          <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+        <?php endforeach; ?>
+        <?php } ?></a>
+      </div>
+
+      <div class="choix col-lg-12">
+        <form action="" method="post">
+          <div class="boutonrandom col-lg-12" style="text-align : center">
+            <input type="submit" name="plusDeFilm" class="btn btn-success" value="+ De FILM">
+          </div>
+        </form>
+      </div>
 
 </div> <!-- Div CHOIXCHOIX -->
-
 <!-- Notes -->
-
-<div class="col-lg-8 col-lg-offset-2 films" style="text-align : center">
-  <h4>Téma ça mon srab</h4>
-  <?php if (!empty($_POST['plusDeFilm'])) { ?>
-    <?php foreach ($randomId2 as $key): ?>
-      <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
-    <?php endforeach; ?>
-  <?php } else { ?>
-    <?php foreach ($randomId as $key): ?>
-      <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
-    <?php endforeach; ?>
-  <?php } ?>
-</div>
-
-<div class="choix col-lg-12">
-  <form action="" method="post">
-    <div class="boutonrandom col-lg-12" style="text-align : center">
-      <input type="submit" name="plusDeFilm" class="btn btn-success" value="+ De FILM">
-    </div>
-  </form>
-</div>
-
-
 
 
 <?php include 'include/footer.php'; ?>
