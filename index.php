@@ -1,6 +1,16 @@
 <?php include ('include/pdo.php'); ?>
 <?php include ('include/functions.php'); ?>
+<?php
 
+$sql = "SELECT id FROM `movies_full`
+        ORDER BY RAND()
+        LIMIT 5";
+  $query = $pdo->prepare($sql);
+  $query->execute();
+  $randomId = $query->fetchAll();
+
+debug($randomId);
+ ?>
 <?php include ('include/header.php'); ?>
 
 
@@ -92,11 +102,9 @@
   <h1>Nous vous proposons ...</h1>
 </div>
 <div class="col-lg-10 col-lg-offset-1">
-<img src="posters/4244.jpg" alt="">
-<img src="posters/4243.jpg" alt="">
-<img src="posters/4239.jpg" alt="">
-<img src="posters/4238.jpg" alt="">
-<img src="posters/4256.jpg" alt="">
+  <?php foreach ($randomId as $key): ?>
+    <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+  <?php endforeach; ?>
 <button type="button" name="button">+ de films !</button>
 </div>
 
