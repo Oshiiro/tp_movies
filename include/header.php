@@ -29,9 +29,9 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <form class="navbar-form navbar-left">
+            <form class="navbar-form navbar-left" method="GET" action="search.php">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Trouver un film">
+                <input type="text" class="form-control" name="searching" placeholder="Trouver un film">
               </div>
               <button type="submit" class="btn btn-default">Recherche</button>
 
@@ -42,7 +42,7 @@
                 echo '<li><a class="noPointer">Bienvenue '.$_SESSION['user']['pseudo'].'</a></li>';
               }
               ?>
-              <li> <a href="back_office.php">BACK OFFICE</a></li>
+              <li> <a href="affiche.php">BACK OFFICE</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-cogs" aria-hidden="true"></i>

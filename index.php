@@ -20,6 +20,12 @@ if (!empty($_POST['plusDeFilm'])) {
     $query->execute();
     $randomId2 = $query->fetchAll();
 }
+
+
+
+
+
+
  ?>
 <?php include ('include/header.php'); ?>
 
