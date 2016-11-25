@@ -2,7 +2,7 @@
 session_start();
  try {
 
-        $pdo = new PDO('mysql:host=localhost;dbname=movies', "root", "", array(
+        $pdo = new PDO('mysql:host=localhost;dbname=movie', "root", "", array(
 
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
