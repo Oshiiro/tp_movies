@@ -3,15 +3,27 @@ function debug($array) {
   echo '<pre>';
   print_r($array);
   echo '</pre>';
-} ?>
+}
 
-<?php function paginationArticle($page, $num, $count) { ?>
-  <div class="status">
-    <?php if ($page > 1) { ?>
-      <a class="btn btn-default status" href="index.php?page=<?php echo $page-1 ?>">Précédent</a>
-    <?php } ?>
-    <?php if ($page*$num < $count) { ?>
-      <a class="btn btn-default status" href="index.php?page=<?php echo $page+1 ?>">Suivant</a>
-    <?php } ?>
-  </div>
-<?php } ?>
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+function isLogged(){
+ if((!empty($_SESSION['user'])) && (!empty($_SESSION['user']['id'])) && (!empty($_SESSION['user']['pseudo'])) && (!empty($_SESSION['user']['role'])) && (!empty($_SESSION['user']['ip']))) {
+
+   $ip = $_SERVER['REMOTE_ADDR'];
+   if($ip == $_SESSION['user']['ip']){
+     return true;
+   }
+   return false;
+ }
+}
+
+?>
