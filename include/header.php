@@ -19,7 +19,8 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">BEST MOVIES EVER</a>
+            <a class="navbar-brand" href="index.php">BEST MOVIES EVER</a>
+
 
           </div>
 
@@ -31,8 +32,10 @@
                 <input type="text" class="form-control" placeholder="Search">
               </div>
               <button type="submit" class="btn btn-default">Recherche</button>
+
             </form>
             <ul class="nav navbar-nav navbar-right">
+                <li> <a href="back_office.php">BACK OFFICE</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-cogs" aria-hidden="true"></i>
