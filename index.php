@@ -9,7 +9,6 @@ $sql = "SELECT id FROM `movies_full`
   $query->execute();
   $randomId = $query->fetchAll();
 
-debug($randomId);
  ?>
 <?php include ('include/header.php'); ?>
 
