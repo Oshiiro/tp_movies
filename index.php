@@ -3,7 +3,7 @@
 <?php
 
 // traitement du randow
-$sql = "SELECT id FROM `movies_full`
+$sql = "SELECT * FROM movies_full
         ORDER BY RAND()
         LIMIT 5";
   $query = $pdo->prepare($sql);
@@ -13,7 +13,7 @@ $sql = "SELECT id FROM `movies_full`
 
 // traitement du bouton + de film
 if (!empty($_POST['plusDeFilm'])) {
-  $sql = "SELECT * FROM `movies_full`
+  $sql = "SELECT * FROM movies_full
           ORDER BY RAND()
           LIMIT 5";
     $query = $pdo->prepare($sql);
@@ -164,13 +164,13 @@ if (!empty($_POST['plusDeFilm'])) {
     <h4>Téma ça mon srab</h4>
     <?php if (!empty($_POST['plusDeFilm'])) { ?>
       <?php foreach ($randomId2 as $key): ?>
-        <a href="single.php?id=<?php echo($key['id']);?>">
+        <a href="single.php?slug=<?php echo($key['slug']);?>">
           <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
         </a>
       <?php endforeach; ?>
     <?php } else { ?>
       <?php foreach ($randomId as $key): ?>
-        <a href="single.php?id=<?php echo($key['id']);?>">
+        <a href="single.php?slug=<?php echo($key['slug']);?>">
           <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
         </a>
       <?php endforeach; ?>
