@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Monoton" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/font-awesome.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/style_back.css" media="screen" title="no title">
@@ -19,7 +20,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Movies</a>
+            <a class="navbar-brand" href="index.php">Movies</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,6 +43,7 @@
                 <ul class="dropdown-menu">
                   <li><a href="inscription.php">Inscription</a></li>
                   <li><a href="connexion.php">Connexion</a></li>
+                  <li><a href="affiche.php">Affiches</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="#">Deconnexion</a></li>
                 </ul>
