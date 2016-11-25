@@ -21,11 +21,6 @@ if (!empty($_POST['plusDeFilm'])) {
     $randomId2 = $query->fetchAll();
 }
 
-
-
-
-
-
  ?>
 <?php include ('include/header.php'); ?>
 
@@ -127,6 +122,43 @@ if (!empty($_POST['plusDeFilm'])) {
       </div>
       <input type="submit" name="buttonrecherche1" value="RECHERCHE">
       <input type="submit" name="buttonrecherche2" value="RECHERCHE">
+    </form>
+  </div>
+</div>
+<div class="choixchoix col-lg-12">
+  <div class="col-lg-12 films" style="text-align : center">
+    <input type="button" name="buttonrecherche" value="RECHERCHE">
+    <h4>Téma ça mon srab</h4>
+    <?php if (!empty($_POST['plusDeFilm'])) { ?>
+      <?php foreach ($randomId2 as $key): ?>
+        <a href="single.php?slug=<?php echo($key['slug']);?>">
+          <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
+                  echo '<img src="posters/' .$key['id']. '.jpg" alt=""/>';
+                } else {
+                  echo '<img src="http://placehold.it/205x300" title="' .$key['title']. '">';
+                }
+          ?>
+        </a>
+      <?php endforeach; ?>
+    <?php } else { ?>
+      <?php foreach ($randomId as $key): ?>
+        <a href="single.php?slug=<?php echo($key['slug']);?>">
+          <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
+                  echo '<img src="posters/' .$key['id']. '.jpg" alt=""/>';
+                } else {
+                  echo '<img src="http://placehold.it/205x300" title="' .$key['title']. '">';
+                }
+          ?>
+        </a>
+      <?php endforeach; ?>
+    <?php } ?>
+  </div>
+
+  <div class="choix col-lg-12">
+    <form action="" method="post">
+      <div class="boutonrandom col-lg-12" style="text-align : center">
+        <input type="submit" name="plusDeFilm" class="btn btn-success" value="+ De FILM">
+      </div>
     </form>
   </div>
   <div class="choixchoix col-lg-12">
