@@ -58,6 +58,8 @@ if(!empty($_POST['submit'])) {
         'ip' => $_SERVER['REMOTE_ADDR']
       );
 
+      header('Location: index.php');
+      exit();
 
     } else {
     $error['mdp'] = 'Mot de passe incorrect';

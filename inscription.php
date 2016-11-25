@@ -98,6 +98,9 @@ if(!empty($_POST['submit'])) {
    $query->execute();
 
    $success = true;
+
+   header('Location: connexion.php');
+   exit();
   }
 }
 
