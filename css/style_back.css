@@ -1,18 +1,27 @@
 body {
   /*overflow:hidden;*/
+  background-image: url(http://www.my-hd-wallpapers.fr/download.php?wallpaper=1389718298&dwn=wall/1389718298_general-old-paper.jpg);
+  background-attachment: fixed;
+  width: 100%;
 }
 .navbar {
   border-radius: 0px;
-}
-.row {
-  padding-left: 20px;
 }
 span {
   margin: 10px;
 }
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: black;
+}
+tr {
+  padding: 1em;
+  color: white;
 }
 th {
   font-family: 'Fredoka One', cursive;
+  font-size: 1.5em;
+  color: white;
+ }
+ .modifier {
+   color: white;
  }

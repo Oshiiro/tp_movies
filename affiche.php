@@ -8,8 +8,8 @@ $query->execute();
 $movies = $query->fetchAll();
 
  ?>
-
- <table class="container">
+ <div class="">
+  <table class="container">
      <tr>
        <th>Id</th>
        <th>title</th>
@@ -17,15 +17,21 @@ $movies = $query->fetchAll();
        <th>Rating</th>
        <th>Action</th>
      </tr>
-   <?php foreach ($movies as $movie){ ?>
+  <?php foreach ($movies as $movie){ ?>
        <tr>
          <td><?php echo $movie['id']; ?></td>
          <td><?php echo $movie['title']; ?></td>
          <td><?php echo $movie['year']; ?></td>
          <td><?php echo $movie['rating']; ?></td>
-       </tr>
-       <?php } ?>
-   </table>
+         <td>
+          <a href="modifier.php?id=<?php echo $movie['id']; ?>">
+            <i class="fa fa-file" aria-hidden="true"></i>
+          </a>
+        </td>
+      </tr>
+    <?php } ?>
+  </table>
+ </div>
 
 
 
