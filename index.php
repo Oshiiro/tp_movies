@@ -106,11 +106,15 @@ if (!empty($_POST['plusDeFilm'])) {
   <h4>Téma ça mon srab</h4>
   <?php if (!empty($_POST['plusDeFilm'])) { ?>
     <?php foreach ($randomId2 as $key): ?>
-      <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+      <a href="single.php?id=<?php echo($key['id']);?>">
+        <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+      </a>
     <?php endforeach; ?>
   <?php } else { ?>
     <?php foreach ($randomId as $key): ?>
-      <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+      <a href="single.php?id=<?php echo($key['id']);?>">
+        <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
+      </a>
     <?php endforeach; ?>
   <?php } ?>
 </div>
