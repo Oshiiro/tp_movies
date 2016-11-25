@@ -1,4 +1,4 @@
-<?php include 'include/pdo_local.php' ?>
+<?php include 'include/pdo.php' ?>
 <?php include 'include/functions.php' ?>
 
 <?php
@@ -126,7 +126,9 @@ if(!empty($_POST['submit'])) {
     <input type="password"  class="form-control" name="repeat" value="<?php if (!empty($_POST['repeat'])) { echo ($_POST['repeat']); } ?>"><br>
     <span class="error"><?php if (!empty($error['repeat'])) { echo ($error['repeat']); } ?></span><br>
 
-    <button type="submit" class="submitInsc btn" name="submit">Créer !</button>
+
+    <input type="submit" name="submit" class="submitInsc btn" value="Créer !">
+
   </form>
 </div>
 
