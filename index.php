@@ -30,18 +30,15 @@ if (!empty($_POST['plusDeFilm'])) {
 <?php include ('include/header.php'); ?>
 
 <div class="container">
-<div class="row">
-<form class="" action="" method="post">
-    <div class="choixchoix">
-
-
+  <div class="row">
+    <form class="" action="" method="post">
+      <div class="choixchoix">
         <label for="usr">Recherche (acteur, directeur..) </label>
         <input type="text" class="form-control" id="director">
+        <div class ="categories col-lg-4" >
+          <div class="row">
+            <h4> Catégories </h4><br>
 
-      <div class ="categories col-lg-4" >
-        <div class="row">
-        <h4> Catégories </h4>
-            <br>
             <div class= "col-md-6">
               <div class="checkbox">
                 <label><input type="checkbox" value="">Action</label>
@@ -95,42 +92,41 @@ if (!empty($_POST['plusDeFilm'])) {
               </div>
             </div>
           </div>
-      </div>
+        </div>
 
-      <div class ="annees col-lg-4" >
-            <h4> Années </h4>
-            <br>
-            <select class="selectyear">
-              <optgroup label="Années">
-                <option>2016-2010</option>
-                <option>2010-2000</option>
-                <option>1990-2000</option>
-                <option>1980-1990</option>
-                <option>1970-1980</option>
-                <option>1960-1970</option>
-                <option>1950-1960</option>
-                <option>1900-1950</option>
-              </optgroup>
-            </select>
-      </div>
+        <div class ="annees col-lg-4" >
+          <h4> Années </h4>
+          <br>
+          <select class="selectyear">
+            <optgroup label="Années">
+              <option>2016-2010</option>
+              <option>2010-2000</option>
+              <option>1990-2000</option>
+              <option>1980-1990</option>
+              <option>1970-1980</option>
+              <option>1960-1970</option>
+              <option>1950-1960</option>
+              <option>1900-1950</option>
+            </optgroup>
+          </select>
+        </div>
 
-      <div class ="popularite col-lg-4" >
-        <h4> Catégories </h4>
-            <br>
-            <select class="selectpopularite">
-              <optgroup label="Popularité">
-                <option> 0 - 20 </option>
-                <option>20 - 40</option>
-                <option>40 - 60</option>
-                <option>60 - 80</option>
-                <option>80 - 100</option>
-
-              </optgroup>
-            </select>
+        <div class ="popularite col-lg-4" >
+          <h4> Catégories </h4>
+          <br>
+          <select class="selectpopularite">
+            <optgroup label="Popularité">
+              <option> 0 - 20 </option>
+              <option>20 - 40</option>
+              <option>40 - 60</option>
+              <option>60 - 80</option>
+              <option>80 - 100</option>
+            </optgroup>
+          </select>
         </div>
       </div>
-    </div>
-</form>
+    </form>
+  </div>
 <div class="choixchoix col-lg-12">
 
 
@@ -164,7 +160,6 @@ if (!empty($_POST['plusDeFilm'])) {
 </div> <!-- Div CHOIXCHOIX -->
 <!-- Notes -->
 
-</div>
-</div>
+</div> <!-- fin container -->
 
 <?php include 'include/footer.php'; ?>
