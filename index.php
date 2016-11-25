@@ -30,8 +30,8 @@ if (!empty($_POST['plusDeFilm'])) {
 <?php include ('include/header.php'); ?>
 
 <div class="container">
-  <div class="row">
-    <form class="" action="" method="post">
+<div class="row">
+<form class="" action="" method="post">
     <div class="choixchoix">
 
 
@@ -100,60 +100,36 @@ if (!empty($_POST['plusDeFilm'])) {
       <div class ="annees col-lg-4" >
             <h4> Années </h4>
             <br>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">2010 - 2016</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">2000 - 2010 </label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">1990 - 2000</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">1980 - 1990</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">1970 - 1980</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">1960 - 1970</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">1950 - 1960</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">1900 - 1950</label>
-            </div>
+            <select class="selectyear">
+              <optgroup label="Années">
+                <option>2016-2010</option>
+                <option>2010-2000</option>
+                <option>1990-2000</option>
+                <option>1980-1990</option>
+                <option>1970-1980</option>
+                <option>1960-1970</option>
+                <option>1950-1960</option>
+                <option>1900-1950</option>
+              </optgroup>
+            </select>
       </div>
 
       <div class ="popularite col-lg-4" >
         <h4> Catégories </h4>
             <br>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">1 etoiles</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">2 etoiles</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">3 etoiles </label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">4 etoiles </label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">5 etoiles </label>
-            </div>
-            </div>
+            <select class="selectpopularite">
+              <optgroup label="Popularité">
+                <option> 0 - 20 </option>
+                <option>20 - 40</option>
+                <option>40 - 60</option>
+                <option>60 - 80</option>
+                <option>80 - 100</option>
+
+              </optgroup>
+            </select>
+        </div>
       </div>
-
-
-
-
     </div>
-
-
-
 </form>
 <div class="choixchoix col-lg-12">
 
