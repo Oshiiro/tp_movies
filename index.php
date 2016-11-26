@@ -120,9 +120,9 @@ if (!empty($_POST['plusDeFilm'])) {
           </select>
         </div>
       </div>
-      <input class="" type="submit" name="buttonrecherche1" value="RECHERCHE">
-      <input class="hidden" type="submit" name="buttonrecherche2" value="RECHERCHE">
+      <input class="hidden buttonrecherche2" type="submit" name="buttonrecherche2" value="RECHERCHE">
     </form>
+    <input class="buttonrecherche1" type="button" name="buttonrecherche1" value="RECHERCHE">
   </div>
 </div>
 <div class="choixchoix col-lg-12">
