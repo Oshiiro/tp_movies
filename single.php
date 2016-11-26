@@ -37,6 +37,14 @@
             <p>Année : <?php echo $movie['year']?></p>
             <p>Genre : <?php echo $movie['genres']?></p>
             <p>Note : <?php echo $movie['rating']. '/100'?></p>
+
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $movie['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $movie['rating'] . '%'?> ">
+                <!-- <span class="sr-only">40% Complete (success)</span> -->
+              </div>
+            </div>
+            <button type="button" class="boutonajoute btn" name="button">à voir!</button>
+            <button type="button" class="hidden boutonretire btn" name="button"></button>
           </div>
         </div>
 

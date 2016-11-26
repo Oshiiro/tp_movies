@@ -38,8 +38,10 @@ text-align: center;}
 
 .films {
   padding : 60px;
-  border-left: 1px dotted black;
-  border-right: 1px dotted black;
+}
+
+.btnafficherecherche {
+float: right;
 }
 
 /* SINGLE: */
@@ -72,6 +74,13 @@ h5 {
 }
 
 p { font-family: courier;}
+
+.progress {
+width: 100px;
+height: 10px;
+margin-left: auto;
+margin-right: auto;
+}
 
 /* FOOTER: */
 
@@ -122,5 +131,6 @@ text-align: center;
 
 .selectyear, .selectpopularite {
 width: 300px;
-
+border-radius: 5px;
+height: 30px;
 }
