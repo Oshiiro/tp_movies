@@ -37,11 +37,9 @@
 
             </form>
             <ul class="nav navbar-nav navbar-right">
-              <?php
-              if (isLogged()) {
-                echo '<li><a class="noPointer">Bienvenue '.$_SESSION['user']['pseudo'].'</a></li>';
-              }
-              ?>
+              <?php if (isLogged()) { ?>
+              <li><a class="noPointer">Bienvenue <?php echo $_SESSION['user']['pseudo']; ?></a></li>
+              <?php } ?>
               <li> <a href="avoir.php">FILMS A VOIR!</a></li>
               <li> <a href="affiche.php">BACK OFFICE</a></li>
               <li class="dropdown">
@@ -50,10 +48,12 @@
                   <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="inscription.php">Inscription</a></li>
-                  <li><a href="connexion.php">Connexion</a></li>
-                  <li role="separator" class="divider"></li>
+                  <?php if (isLogged()) { ?>
                   <li><a href="deconnexion.php">Deconnexion</a></li>
+                  <?php } else { ?>
+                  <li><a href="connexion.php">Connexion</a></li>
+                  <li><a href="inscription.php">Inscription</a></li>
+                  <?php } ?>
                 </ul>
               </li>
             </ul>
