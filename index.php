@@ -27,7 +27,7 @@ if (!empty($_POST['plusDeFilm'])) {
 <div class="container">
   <div class="row">
     <form class="" action="" method="post">
-      <div class="choixchoix">
+      <div class="choixchoix hidden">
         <label for="usr">Recherche (acteur, directeur..) </label>
         <input type="text" class="form-control" id="director">
         <div class ="categories col-lg-4" >
@@ -36,54 +36,54 @@ if (!empty($_POST['plusDeFilm'])) {
 
             <div class= "col-md-6">
               <div class="checkbox">
-                <label><input type="checkbox" value="">Action</label>
+                <label><input type="checkbox" name="action" value="">Action</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Animation</label>
+                <label><input type="checkbox" name="animation" value="">Animation</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Aventure</label>
+                <label><input type="checkbox" name="aventure" value="">Aventure</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Biography</label>
+                <label><input type="checkbox" name="biography" value="">Biography</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Comedy</label>
+                <label><input type="checkbox" name="comedy" value="">Comedy</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Drama</label>
+                <label><input type="checkbox" name="drama" value="">Drama</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Family</label>
+                <label><input type="checkbox" name="family" value="">Family</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Fantasy</label>
+                <label><input type="checkbox" name="fantasy" value="">Fantasy</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="checkbox">
-                <label><input type="checkbox" value="">History</label>
+                <label><input type="checkbox" name="history" value="">History</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Horror</label>
+                <label><input type="checkbox" name="horror" value="">Horror</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Music</label>
+                <label><input type="checkbox" name="music" value="">Music</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Mystery</label>
+                <label><input type="checkbox" name="mystery" value="">Mystery</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Romance</label>
+                <label><input type="checkbox" name="romance" value="">Romance</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Sci-fy</label>
+                <label><input type="checkbox" name="scify" value="">Sci-fy</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">Thriller</label>
+                <label><input type="checkbox" name="thriller" value="">Thriller</label>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" value="">War</label>
+                <label><input type="checkbox" name="war" value="">War</label>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ if (!empty($_POST['plusDeFilm'])) {
           <h4> Années </h4>
           <br>
           <select class="selectyear">
-            <optgroup label="Années">
+            <optgroup label="Années" name="annees">
               <option>2016-2010</option>
               <option>2010-2000</option>
               <option>1990-2000</option>
@@ -110,8 +110,8 @@ if (!empty($_POST['plusDeFilm'])) {
           <h4> Catégories </h4>
           <br>
           <select class="selectpopularite">
-            <optgroup label="Popularité">
-              <option> 0 - 20 </option>
+            <optgroup label="Popularité" name="popularité">
+              <option>0 - 20</option>
               <option>20 - 40</option>
               <option>40 - 60</option>
               <option>60 - 80</option>
@@ -120,8 +120,8 @@ if (!empty($_POST['plusDeFilm'])) {
           </select>
         </div>
       </div>
-      <input type="submit" name="buttonrecherche1" value="RECHERCHE">
-      <input type="submit" name="buttonrecherche2" value="RECHERCHE">
+      <input class="" type="submit" name="buttonrecherche1" value="RECHERCHE">
+      <input class="hidden" type="submit" name="buttonrecherche2" value="RECHERCHE">
     </form>
   </div>
 </div>
