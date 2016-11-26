@@ -120,20 +120,13 @@ if (!empty($_POST['plusDeFilm'])) {
           </select>
         </div>
       </div>
-<<<<<<< HEAD
       <input type="submit" name="buttonrecherche1" value="RECHERCHE">
       <input type="submit" name="buttonrecherche2" value="RECHERCHE">
     </form>
   </div>
 </div>
-=======
-    </div>
-    <input type="button" class="btn btnafficherecherche" name="buttonrecherche" value="RECHERCHE">
-</form>
->>>>>>> a9c07423e101f633390dad28b66e1bb0d60aae3a
 <div class="choixchoix col-lg-12">
   <div class="col-lg-12 films" style="text-align : center">
-
     <h4>Téma ça mon srab</h4>
     <?php if (!empty($_POST['plusDeFilm'])) { ?>
       <?php foreach ($randomId2 as $key): ?>
@@ -159,7 +152,6 @@ if (!empty($_POST['plusDeFilm'])) {
       <?php endforeach; ?>
     <?php } ?>
   </div>
-
   <div class="choix col-lg-12">
     <form action="" method="post">
       <div class="boutonrandom col-lg-12" style="text-align : center">
@@ -167,32 +159,6 @@ if (!empty($_POST['plusDeFilm'])) {
       </div>
     </form>
   </div>
-  <div class="choixchoix col-lg-12">
-    <div class="col-lg-12 films" style="text-align : center">
-      <h4>Téma ça mon srab</h4>
-      <?php if (!empty($_POST['plusDeFilm'])) { ?>
-        <?php foreach ($randomId2 as $key): ?>
-          <a href="single.php?slug=<?php echo($key['slug']);?>">
-            <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
-          </a>
-        <?php endforeach; ?>
-      <?php } else { ?>
-        <?php foreach ($randomId as $key): ?>
-          <a href="single.php?slug=<?php echo($key['slug']);?>">
-            <img src="posters/<?php echo $key['id'] ?>.jpg" alt="">
-          </a>
-        <?php endforeach; ?>
-      <?php } ?>
-    </div>
-
-    <div class="choix col-lg-12">
-      <form action="" method="post">
-        <div class="boutonrandom col-lg-12" style="text-align : center">
-          <input type="submit" name="plusDeFilm" class="btn btn-success" value="+ De FILM">
-        </div>
-      </form>
-    </div>
-
   </div> <!-- Div CHOIXCHOIX -->
 <!-- Notes -->
 
