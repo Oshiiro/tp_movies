@@ -32,58 +32,27 @@ if (!empty($_POST['plusDeFilm'])) {
         <input type="text" class="form-control" name="searching" id="director">
         <div class ="categories col-lg-4" >
           <div class="row">
-            <h4> Catégories </h4><br>
-            <div class= "col-md-6">
-              <div class="checkbox">
-                <label><input type="checkbox" name="action" value="">Action</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="animation" value="">Animation</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="aventure" value="">Aventure</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="biography" value="">Biography</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="comedy" value="">Comedy</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="drama" value="">Drama</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="family" value="">Family</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="fantasy" value="">Fantasy</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="checkbox">
-                <label><input type="checkbox" name="history" value="">History</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="horror" value="">Horror</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="music" value="">Music</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="mystery" value="">Mystery</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="romance" value="">Romance</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="scify" value="">Sci-fy</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="thriller" value="">Thriller</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="war" value="">War</label>
-              </div>
+            <div class="form-group">
+              <h4>Genres</h4>
+              <br>
+              <label for="genres"></label>
+              <input type="checkbox" name="genres[]" id="genres" value="Drama" /> Drama
+              <input type="checkbox" name="genres[]" id="genres" value="Action" /> Action
+              <input type="checkbox" name="genres[]" id="genres" value="Adventure" /> Adventure
+              <input type="checkbox" name="genres[]" id="genres" value="Crime" /> Crime
+              <input type="checkbox" name="genres[]" id="genres" value="Romance" /> Romance
+              <input type="checkbox" name="genres[]" id="genres" value="War" />War
+              <input type="checkbox" name="genres[]" id="genres" value="Thriller" />Thriller
+              <input type="checkbox" name="genres[]" id="genres" value="Sci-fy" />Sci-fy
+              <input type="checkbox" name="genres[]" id="genres" value="Mystery" />Mystery
+              <input type="checkbox" name="genres[]" id="genres" value="Music" />Music
+              <input type="checkbox" name="genres[]" id="genres" value="Horror" />Horror
+              <input type="checkbox" name="genres[]" id="genres" value="History" />History
+              <input type="checkbox" name="genres[]" id="genres" value="Fantasy" />Fantasy
+              <input type="checkbox" name="genres[]" id="genres" value="Family" />Family
+              <input type="checkbox" name="genres[]" id="genres" value="Comedy" />Comedy
+              <input type="checkbox" name="genres[]" id="genres" value="Biography" />Biography
+              <input type="checkbox" name="genres[]" id="genres" value="Animation" />Animation
             </div>
           </div>
         </div>
