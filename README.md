@@ -18,3 +18,4 @@ Kilian 27/11/2016 :
 * Creation de "avoir.php" et debut de developpement.
 * CSS : ajout d'un width 100% au footer, car cela n'etait pas joli en responsive
 * Ajout d'une petite fonction pas forcement legale et qu'on devra certainement retirer ... ou ameliorer... (je vous laisse chercher)
+* 
