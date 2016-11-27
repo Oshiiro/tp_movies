@@ -1,5 +1,5 @@
-<?php require('include/pdo.php') ?>
-<?php require('include/header_back.php') ?>
+<?php require('include/pdo.php'); ?>
+<?php require('include/functions.php'); ?>
 <?php
 $sql ='SELECT * FROM movies_full';
 
@@ -8,6 +8,7 @@ $query->execute();
 $movies = $query->fetchAll();
 
  ?>
+ <?php require('include/header_back.php'); ?>
  <div class="">
   <table class="container">
      <tr>
