@@ -99,6 +99,7 @@ margin-right: auto;
 .footer {
 padding : 10px;
 height: 50px;
+width: 100%;
 background-color: orange;
 text-align: center;
 font-family: courier;
