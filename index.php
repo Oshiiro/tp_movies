@@ -88,13 +88,13 @@ if (!empty($_POST['plusDeFilm'])) {
           </select>
         </div>
       </div>
-      <div class="center">
-        <input class="hidden buttonrecherche2 btn btn-success" type="submit" name="buttonrecherche2" placeholder="Trouver un film">
-      </div>
-    </form>
-    <div class="center">
-      <input class="buttonrecherche1 btn btn-success" type="button" name="buttonrecherche1" value="RECHERCHE">
     </div>
+    <div class="center">
+      <input class="hidden buttonrecherche2 btn btn-success" type="submit" name="buttonrecherche2" value="RECHERCHE" placeholder="Trouver un film">
+    </div>
+  </form>
+  <div class="center">
+    <input class="buttonrecherche1 btn btn-success" type="button" name="buttonrecherche1" value="RECHERCHE">
   </div>
 </div>
 <div class="choixchoix col-lg-12">

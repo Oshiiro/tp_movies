@@ -1,5 +1,5 @@
 
-
+// affichage de la recherche
 $('.buttonrecherche1').click(function(e) {
   e.preventDefault();
   $('.buttonrecherche2').removeClass('hidden');
