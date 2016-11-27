@@ -26,14 +26,13 @@ if (!empty($_POST['plusDeFilm'])) {
 
 <div class="container">
   <div class="row">
-    <form class="" action="" method="post">
+    <form class="" action="search.php" method="GET">
       <div class="choixchoix hidden">
         <label for="usr">Recherche (acteur, directeur..) </label>
-        <input type="text" class="form-control" id="director">
+        <input type="text" class="form-control" name="searching" id="director">
         <div class ="categories col-lg-4" >
           <div class="row">
             <h4> Catégories </h4><br>
-
             <div class= "col-md-6">
               <div class="checkbox">
                 <label><input type="checkbox" name="action" value="">Action</label>
@@ -120,9 +119,13 @@ if (!empty($_POST['plusDeFilm'])) {
           </select>
         </div>
       </div>
-      <input class="hidden buttonrecherche2" type="submit" name="buttonrecherche2" value="RECHERCHE">
+      <div class="center">
+        <input class="hidden buttonrecherche2 btn btn-success" type="submit" name="buttonrecherche2" placeholder="Trouver un film">
+      </div>
     </form>
-    <input class="buttonrecherche1" type="button" name="buttonrecherche1" value="RECHERCHE">
+    <div class="center">
+      <input class="buttonrecherche1 btn btn-success" type="button" name="buttonrecherche1" value="RECHERCHE">
+    </div>
   </div>
 </div>
 <div class="choixchoix col-lg-12">
@@ -154,12 +157,12 @@ if (!empty($_POST['plusDeFilm'])) {
   </div>
   <div class="choix col-lg-12">
     <form action="" method="post">
-      <div class="boutonrandom col-lg-12" style="text-align : center">
+      <div class="col-lg-12 center">
         <input type="submit" name="plusDeFilm" class="btn btn-success" value="+ De FILM">
       </div>
     </form>
   </div>
-  </div> <!-- Div CHOIXCHOIX -->
+</div> <!-- Div CHOIXCHOIX -->
 <!-- Notes -->
 
 </div> <!-- fin container -->

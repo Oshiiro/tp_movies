@@ -29,13 +29,13 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <form class="navbar-form navbar-left" method="GET" action="search.php">
+            <!-- <form class="navbar-form navbar-left" method="GET" action="search.php">
               <div class="form-group">
                 <input type="text" class="form-control" name="searching" placeholder="Trouver un film">
               </div>
               <button type="submit" class="btn btn-default">Recherche</button>
 
-            </form>
+            </form> -->
             <ul class="nav navbar-nav navbar-right">
               <?php if (isLogged()) { ?>
               <li><a class="noPointer">Bienvenue <?php echo $_SESSION['user']['pseudo']; ?></a></li>
