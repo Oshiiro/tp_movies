@@ -3,7 +3,7 @@
 <?php include ('include/functions.php'); ?>
 <?php
 
-// traitement du random
+// traitement du random "TEMA CA MON SRAB"
 $sql = "SELECT * FROM movies_full
         ORDER BY RAND()
         LIMIT 5";
@@ -11,43 +11,54 @@ $sql = "SELECT * FROM movies_full
   $query->execute();
   $randomId = $query->fetchAll();
 
+// traitement de barre de recherche
+if(!empty($_GET['buttonrecherche2'])) {
+  if(!empty($_GET['searching'])) {
+    $searching = trim(strip_tags($_GET['searching']));
+  }
+
+
+  debug($_GET);
+  die();
+
+}
+
+
  ?>
 
 <?php include ('include/header.php'); ?>
 
 <div class="container">
   <div class="row">
-    <form class="" id="recherche" action="search.php" method="GET">
+    <form class="" id="recherche" action="" method="GET">
       <div class="choixchoix hidden">
         <label for="usr">Recherche (titre du film, acteurs, réalisateurs) </label>
         <input type="text" class="form-control" name="searching" id="director">
         <div class ="categories col-lg-4" >
-          <div class="row">
-            <div class="form-group">
-              <h4>Genres</h4>
-              <br>
-              <label for="genres" id="genres"></label>
-              <input type="checkbox" name="genres[]" value="Drama" /> Drama
-              <input type="checkbox" name="genres[]" value="Action" /> Action
-              <input type="checkbox" name="genres[]" value="Adventure" /> Adventure
-              <input type="checkbox" name="genres[]" value="Crime" /> Crime
-              <input type="checkbox" name="genres[]" value="Romance" /> Romance
-              <input type="checkbox" name="genres[]" value="War" />War
-              <input type="checkbox" name="genres[]" value="Thriller" />Thriller
-              <input type="checkbox" name="genres[]" value="Sci-fy" />Sci-fy
-              <input type="checkbox" name="genres[]" value="Mystery" />Mystery
-              <input type="checkbox" name="genres[]" value="Music" />Music
-              <input type="checkbox" name="genres[]" value="Horror" />Horror
-              <input type="checkbox" name="genres[]" value="History" />History
-              <input type="checkbox" name="genres[]" value="Fantasy" />Fantasy
-              <input type="checkbox" name="genres[]" value="Family" />Family
-              <input type="checkbox" name="genres[]" value="Comedy" />Comedy
-              <input type="checkbox" name="genres[]" value="Biography" />Biography
-              <input type="checkbox" name="genres[]" value="Animation" />Animation
-              <br>
-              <input type="button" id="allGenres" value="Tout cocher"/>
-              <input type="button" id="noGenres" value="Tout décocher"/>
-            </div>
+          <div class="form-group">
+            <h4>Genres</h4>
+            <br>
+            <label for="genres" id="genres"></label>
+            <input type="checkbox" name="genres[]" value="Drama" /> Drama
+            <input type="checkbox" name="genres[]" value="Action" /> Action
+            <input type="checkbox" name="genres[]" value="Adventure" /> Adventure
+            <input type="checkbox" name="genres[]" value="Crime" /> Crime
+            <input type="checkbox" name="genres[]" value="Romance" /> Romance
+            <input type="checkbox" name="genres[]" value="War" />War
+            <input type="checkbox" name="genres[]" value="Thriller" />Thriller
+            <input type="checkbox" name="genres[]" value="Sci-fy" />Sci-fy
+            <input type="checkbox" name="genres[]" value="Mystery" />Mystery
+            <input type="checkbox" name="genres[]" value="Music" />Music
+            <input type="checkbox" name="genres[]" value="Horror" />Horror
+            <input type="checkbox" name="genres[]" value="History" />History
+            <input type="checkbox" name="genres[]" value="Fantasy" />Fantasy
+            <input type="checkbox" name="genres[]" value="Family" />Family
+            <input type="checkbox" name="genres[]" value="Comedy" />Comedy
+            <input type="checkbox" name="genres[]" value="Biography" />Biography
+            <input type="checkbox" name="genres[]" value="Animation" />Animation
+            <br>
+            <input type="button" id="allGenres" value="Tout cocher"/>
+            <input type="button" id="noGenres" value="Tout décocher"/>
           </div>
         </div>
 
@@ -67,7 +78,7 @@ $sql = "SELECT * FROM movies_full
           </select>
         </div>
 
-        <div class ="popularite col-lg-4" >
+        <div class ="popularite col-md-4" >
           <h4> Popularité </h4>
           <br>
           <select class="selectpopularite" name="popularite">
@@ -89,7 +100,7 @@ $sql = "SELECT * FROM movies_full
     </div>
   </form>
   <div class="center">
-    <input class="buttonrecherche1 btn btn-success" type="button" name="buttonrecherche1" value="RECHERCHE">
+    <input class="buttonrecherche1 btn btn-success" type="button" name="buttonrecherche1" value="FILTRER">
   </div>
 </div>
 <div class="container">

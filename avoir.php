@@ -23,7 +23,9 @@ foreach ($aVoirs as $aVoir) {
 }
 
 ?>
-<h1>En construction</h1>
+
+<input type="button" name="a_noter" value="Note ce film!">
+
 
 <a href="index.php">Retour à l'index</a>
 
