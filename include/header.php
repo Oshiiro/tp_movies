@@ -40,7 +40,9 @@
               <?php if (isLogged()) { ?>
               <li><a class="noPointer">Bienvenue <?php echo $_SESSION['user']['pseudo']; ?></a></li>
               <?php } ?>
-              <li> <a href="avoir.php">FILMS A VOIR!</a></li>
+              <?php if (isLogged()) {
+                echo '<li><a href="avoir.php">FILMS A VOIR !</a></li>';
+              } ?>
               <li> <a href="affiche.php">BACK OFFICE</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
