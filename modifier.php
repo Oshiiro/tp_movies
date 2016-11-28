@@ -39,7 +39,11 @@
   <div class="container modifier">
     <div class="col-md-4">
       <div class="thumbnail">
-        <div><?php echo '<img src="posters/' .$movies['id']. '.jpg" alt=""/>' ?></div>
+        <?php if (file_exists('posters/' .$movie['id']. '.jpg')) {
+                echo '<div class="center"><img src="posters/' .$movie['id']. '.jpg" alt=""/></div>';
+              } else {
+                echo '<div class="center"><img src="http://placehold.it/205x300" title="' .$movie['title']. '</div>">';
+              } ?>
         <div class="caption">
           <h3><?php echo $movies['title']; ?></h3>
           <p>

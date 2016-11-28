@@ -17,7 +17,7 @@
   }
 
 //AJOUT DU FILM DANS LA LISTE "A VOIR"
-  if (!empty($_POST['submit'])) {
+  // if (!empty($_POST['submit'])) {
     foreach ($movies as $movie) {
       $id_movie = $movie['id'];
     }
@@ -30,25 +30,7 @@
     $query->execute();
     $ajoutExist = $query->fetch();
 
-
-
-    if (!empty($ajoutExist)) {
-      //Le film est deja dans la BDD
-    } else {
-
-      //Si non : On l'ajoute
-      $ajoutAVoir = "INSERT INTO movies_user_note (id_movie, id_user, note, created_at, status) VALUES(:id_movie, :id_user, 0, now(), 1)";
-      //preparation de la requete
-      $query = $pdo->prepare($ajoutAVoir);
-      // protection des inj sql
-      $query->bindValue(':id_movie', $id_movie, PDO::PARAM_STR);
-      $query->bindValue(':id_user', $id_user, PDO::PARAM_STR);
-      $query->execute();
-
-
-
-    }
-  }
+  // }
 
  ?>
 
@@ -89,13 +71,11 @@
             <?php if($ajoutExist['status'] == 1) { ?>
               <a href="delete.php?id=<?php echo $movie['id'] ?>"><button type="button" class="boutonretire btn" name="button">Retirer</button></a>
               <?php } else { ?>
-            <form action="" method="POST">
-              <input type="submit" class="boutonajoute btn" name="submit" value="A voir">
-            </form>
+              <a href="ajoutAVoir.php?id=<?php echo $movie['id'] ?>"><button type="button" class="boutonretire btn" name="button">A voir</button></a>
           <?php } ?>
           <!-- <button id="zoneTel" type="button" name="" class="btn">Telecharger ce film</button> -->
 
-        <?php } else { echo '<a href="connexion.php">Connect toi connard !</a>'; } ?>
+        <?php } else { echo '<a href="connexion.php">Se connecter</a>'; } ?>
 
         </div>
       <?php } ?>
