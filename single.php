@@ -48,46 +48,44 @@
 
 <?php include 'include/header.php'; ?>
 
-<?php
-    foreach ($movies as $movie) {
-      if($_GET['slug'] == $movie['slug']) { ?>
-
-        <div class="col-lg-6 col-lg-offset-3">
-          <h4><?php echo $movie['title'] ?></h4>
+<div class="container">
+  <div class="row">
+    <?php foreach ($movies as $movie) { ?>
+      <?php if($_GET['slug'] == $movie['slug']) { ?>
+        <div class="col-md-12">
+          <h4 class="center"><?php echo $movie['title'] ?></h4>
           <?php if (file_exists('posters/' .$movie['id']. '.jpg')) {
-                  echo '<img src="posters/' .$movie['id']. '.jpg" alt=""/>';
+                  echo '<div class="center"><img src="posters/' .$movie['id']. '.jpg" alt=""/></div>';
                 } else {
-                  echo '<img src="http://placehold.it/205x300" title="' .$movie['title']. '">';
-                }
-          ?>
-          <div class="infofilm col-lg-9">
-            <h5> Infos du film : </h5>
-            <hr>
-            <p>Résumé : <?php echo $movie['plot']?></p>
-            <p>Réalisateur : <?php echo $movie['directors']?></p>
-            <p>Acteurs principaux : <?php echo $movie['cast']?></p>
-            <p>Durée : <?php echo $movie['runtime']. ' minutes'?></p>
-            <p>Année : <?php echo $movie['year']?></p>
-            <p>Genre : <?php echo $movie['genres']?></p>
-            <p>Note : <?php echo $movie['rating']. '/100'?></p>
-
-            <div class="progress">
-              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $movie['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $movie['rating'] . '%'?> ">
-                <!-- <span class="sr-only">40% Complete (success)</span> -->
-              </div>
-            </div>
-            <form action="" method="POST">
-              <input type="submit" class="boutonajoute btn" name="submit" value="A voir">
-            </form>
-            <!-- <button id="zoneTel" type="button" name="" class="btn">Telecharger ce film</button> -->
-            <button type="button" class="hidden boutonretire btn" name="button"></button>
-          </div>
+                  echo '<div class="center"><img src="http://placehold.it/205x300" title="' .$movie['title']. '</div>">';
+                } ?>
         </div>
+        <div class="infofilm col-md-12">
+          <h5> Infos du film : </h5>
+          <hr>
+          <p>Résumé : <?php echo $movie['plot']?></p>
+          <p>Réalisateur : <?php echo $movie['directors']?></p>
+          <p>Acteurs principaux : <?php echo $movie['cast']?></p>
+          <p>Durée : <?php echo $movie['runtime']. ' minutes'?></p>
+          <p>Année : <?php echo $movie['year']?></p>
+          <p>Genre : <?php echo $movie['genres']?></p>
+          <p>Note : <?php echo $movie['rating']. '/100'?></p>
 
-  <?php }
-    }
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $movie['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $movie['rating'] . '%'?> ">
+              <!-- <span class="sr-only">40% Complete (success)</span> -->
+            </div>
+          </div>
+          <form action="" method="POST">
+            <input type="submit" class="boutonajoute btn" name="submit" value="A voir">
+          </form>
+          <!-- <button id="zoneTel" type="button" name="" class="btn">Telecharger ce film</button> -->
+          <button type="button" class="hidden boutonretire btn" name="button"></button>
+        </div>
+      <?php } ?>
+    <?php } ?>
+  </div>
+</div>
 
-
-  ?>
 
 <?php include 'include/footer.php'; ?>

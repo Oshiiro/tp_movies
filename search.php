@@ -15,6 +15,7 @@ if (!empty($recherche)) {
           WHERE title LIKE :search
           OR slug LIKE :search
           -- AND genre LIKE :search
+          foreach
           OR year LIKE :search
           OR directors LIKE :search
           OR cast like :search
