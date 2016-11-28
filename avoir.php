@@ -6,7 +6,7 @@
 <?php
 $idSession = $_SESSION['user']['id'];
 
-  $sql = "SELECT *
+  $sql = "SELECT movies_full.id as idd, movies_full.title
           FROM movies_user_note
           LEFT JOIN movies_full ON movies_user_note.id_movie = movies_full.id
           LEFT JOIN users ON movies_user_note.id = users.id
@@ -26,8 +26,8 @@ $idSession = $_SESSION['user']['id'];
     foreach ($aVoirs as $aVoir) { ?>
       <div class="col-md-12">
         <h4><?php echo $aVoir['title'] ?></h4>
-        <?php if (file_exists('posters/' .$aVoir['id']. '.jpg')) {
-          echo '<img src="posters/' .$aVoir['id']. '.jpg" alt=""/>';
+        <?php if (file_exists('posters/' .$aVoir['idd']. '.jpg')) {
+          echo '<img src="posters/' .$aVoir['idd']. '.jpg" alt=""/>';
         } else {
           echo '<img src="http://placehold.it/205x300" title="' .$aVoir['title']. '">';
         }
