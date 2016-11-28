@@ -3,10 +3,12 @@
 
 <?php
 
-if(!empty($_GET['submitedfilter'])) {
-  debug($_GET);
-  die();
-}
+// if(!empty($_GET['submitedfilter'])) {
+//   debug($_GET);
+//   die();
+// }
+
+
  ?>
 
 
@@ -50,7 +52,31 @@ if(!empty($_GET['submitedfilter'])) {
       <input type="checkbox" name="genres[]" id="genres" value="Biography" />Biography
       <input type="checkbox" name="genres[]" id="genres" value="Animation" />Animation
     </div>
-    <input type="submit" name="submitedfilter" class="btn btn-default">Submit</button>
+    <div class="form-group">
+      <label for="plot">Plot</label>
+      <input type="text" class="form-control" id="plot" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="directors">Directors</label>
+      <input type="text" class="form-control" id="directors" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="cast">Cast</label>
+      <input type="text" class="form-control" id="cast" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="writers">Writers</label>
+      <input type="text" class="form-control" id="writers" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="runtime">Runtime</label>
+      <input type="text" class="form-control" id="runtime" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input type="text" class="form-control" id="rating" placeholder=""><br>
+    </div>
+    <input type="submit" name="submitedfilter" class="btn btn-default">
   </form>
 </div>
 
