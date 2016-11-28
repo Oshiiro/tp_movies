@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/font-awesome.css" media="screen" title="no title">
     <link rel="stylesheet" href="css/style_back.css" media="screen" title="no title">
