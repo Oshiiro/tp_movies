@@ -1,21 +1,54 @@
+<?php session_start() ?>
+
 <?php include 'include/pdo.php'; ?>
 <?php include 'include/functions.php'; ?>
-<?php include 'include/header.php'; ?>
 
 <?php
 
-// FICHE TECHNIQUE DU FILM
-
+// RECUPERATION DE LA FICHE TECHNIQUE DU FILM POUR AFFICHAGE
   if(!empty($_GET['slug'])) {
     $slug = $_GET['slug'];
 
     $sql = "SELECT * FROM movies_full WHERE slug=:slug";
     $query = $pdo->prepare($sql);
-    $query->bindValue(':slug', $slug, PDO::PARAM_INT);
+    $query->bindValue(':slug', $slug, PDO::PARAM_STR);
     $query->execute();
     $movies = $query->fetchAll();
+  }
 
+//AJOUT DU FILM DANS LA LISTE "A VOIR"
+  if (!empty($_POST['submit'])) {
+    foreach ($movies as $movie) {
+      $id_movie = $movie['id'];
+    }
+    $id_user = $_SESSION['user']['id'];
 
+    $sql = "SELECT id FROM movies_user_note WHERE id_user=:id_user AND id_movie=:id_movie";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':id_movie', $id_movie, PDO::PARAM_INT);
+    $query->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+    $query->execute();
+    $ajoutExist = $query->fetch();
+
+    if (!empty($ajoutExist)) {
+      //Le film est deja dans la BDD
+    } else {
+      //Si non : On l'ajoute
+      $ajoutAVoir = "INSERT INTO movies_user_note (id_movie, id_user, note, created_at, status) VALUES(:id_movie, :id_user, 0, now(), 1)";
+      //preparation de la requete
+      $query = $pdo->prepare($ajoutAVoir);
+      // protection des inj sql
+      $query->bindValue(':id_movie', $id_movie, PDO::PARAM_STR);
+      $query->bindValue(':id_user', $id_user, PDO::PARAM_STR);
+      $query->execute();
+    }
+  }
+
+ ?>
+
+<?php include 'include/header.php'; ?>
+
+<?php
     foreach ($movies as $movie) {
       if($_GET['slug'] == $movie['slug']) { ?>
 
@@ -43,15 +76,17 @@
                 <!-- <span class="sr-only">40% Complete (success)</span> -->
               </div>
             </div>
-            <button type="button" class="boutonajoute btn" name="button">à voir!</button>
-            <button id="zoneTel" type="button" name="" class="btn">Telecharger ce film</button>
+            <form action="" method="POST">
+              <input type="submit" class="boutonajoute btn" name="submit" value="A voir">
+            </form>
+            <!-- <button id="zoneTel" type="button" name="" class="btn">Telecharger ce film</button> -->
             <button type="button" class="hidden boutonretire btn" name="button"></button>
           </div>
         </div>
 
   <?php }
     }
-  }
+
 
   ?>
 

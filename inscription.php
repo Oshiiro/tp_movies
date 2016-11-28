@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <?php include 'include/pdo.php' ?>
 <?php include 'include/functions.php' ?>
 
@@ -111,7 +113,7 @@ if(!empty($_POST['submit'])) {
 <div class="container col-lg-4 col-lg-offset-4">
   <br><br>
   <div class="success" id="reponse_forminscription"></div>
-  <form id="inscription" class="inscriptionAjax.php" action="" method="POST">
+  <form id="inscription" class="" action="" method="POST">
     <h4>Inscription</h4>
 
     <label for="pseudo">Pseudo :</label><br>
