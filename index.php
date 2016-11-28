@@ -11,17 +11,70 @@ $sql = "SELECT * FROM movies_full
   $query->execute();
   $randomId = $query->fetchAll();
 
-// traitement de barre de recherche
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//                 BARRE DE RECHERCHE
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+$searching = '';
+$genres = '';
+$anneesSQL = '';
+$populariteSQL = '';
+
 if(!empty($_GET['buttonrecherche2'])) {
+  // recherche
   if(!empty($_GET['searching'])) {
     $searching = trim(strip_tags($_GET['searching']));
   }
+  // genres
+  if(!empty($_GET['genres'])) {
+    $genres = $_GET['genres'];
+    function forGenres($array) {
+      foreach ($array as $key) {
+        $variable = "AND genre = '".$key."'";
+        echo $variable.'<br>';
+      };
+    }
+  }
+  // annees
+  if(!empty($_GET['annees'])) {
+    $annees = trim(strip_tags($_GET['annees']));
+    $anneesStr = str_replace("-", "' AND '",$annees);
+    $anneesSQL = "'".$anneesStr."'";
+  }
+  // popularite
+  if(!empty($_GET['popularite'])) {
+    $popularite = trim(strip_tags($_GET['popularite']));
+    $populariteStr = str_replace("-", "' AND '",$popularite);
+    $populariteSQL = "'".$populariteStr."'";
+  }
 
+  // debug($_GET);
+  // die();
 
-  debug($_GET);
-  die();
+  echo $searching.'<br>';
+  if(!empty($_GET['genres'])) {
+    forGenres($genres);
+  }
+  echo $anneesSQL.'<br>';
+  echo $populariteSQL.'<br>';
+
+  $sql = "SELECT * FROM movies_full
+          WHERE title LIKE :search
+          OR directors LIKE :search
+          OR cast LIKE :search
+          OR popularity BETWEEN $populariteSQL";
+
+  $query = $pdo->prepare($sql);
+  $query->bindValue(':search','%' . $searching . '%', PDO::PARAM_STR);
+  $query->execute();
+  $resultSearch = $query->fetchAll();
+
+  debug($resultSearch);
+
 
 }
+
 
 
  ?>

@@ -6,6 +6,7 @@ background-color: orange;
 
 .navbar-default {
 margin : 0;
+border: none;
 }
 .navbar-default .navbar-brand  {
 font-family: courier;
@@ -16,6 +17,7 @@ color: white;
 .navbar-default .navbar-nav > li > a {
   color : white;
 }
+
 
 /* INDEX */
 .center {
