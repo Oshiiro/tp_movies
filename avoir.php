@@ -38,13 +38,23 @@ $idSession = $_SESSION['user']['id'];
         ?>
         <div class="infofilm col-md-12">
           <form class ="class" method ="POST" action="delete.php">
-            <a href="delete.php?id=<?php echo $aVoir['idd'] ?>" class"vu">Vu</a>
+            <button class="btn notefilm"><a href="delete.php?id=<?php echo $aVoir['idd'] ?>" class"vu">Vu</a></button>
             <button type="button" name="button" class ="btn notefilm">Note ce film !</button>
           </form>
+            <!-- Systeme de notation -->
+          <div class="progress2">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $movie['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $movie['rating'] . '%'?> ">
+              <!-- <span class="sr-only">40% Complete (success)</span> -->
+          </div>
+
         </div>
+
+
+
+
+        <button class="btn btn-warning"><a href="index.php">Retour à l'index</a></button>
       </div>
       <?php } ?>
-      <a href="index.php">Retour à l'index</a>
   </div>
 </div>
 
