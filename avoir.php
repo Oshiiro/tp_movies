@@ -4,7 +4,9 @@
 <?php include 'include/functions.php'; ?>
 
 <?php
-$idSession = $_SESSION['user']['id'];
+
+  $idSession = $_SESSION['user']['id'];
+
 
   $sql = "SELECT movies_full.id as idd, movies_full.title
           FROM movies_user_note

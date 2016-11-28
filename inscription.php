@@ -55,7 +55,7 @@ if(!empty($_POST['submit'])) {
        $doublon_mail = $query->fetch();
 
         if(!empty($doublon_mail)){
-         $error['doublon_mail'] = 'adresse mail non-disponible';
+         $error['email'] = 'adresse mail non-disponible';
         }
       }
     } else {

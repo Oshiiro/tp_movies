@@ -12,7 +12,11 @@ if(!empty($_POST['submit'])) {
   // Faille XSS
   $login = trim(strip_tags($_POST['login']));
   $mdp = trim(strip_tags($_POST['mdp']));
-  $rememberme = $_POST['rememberme'];
+  if(!empty($_POST['rememberme'])) {
+    $rememberme = $_POST['rememberme'];
+    setcookie('rememberme', $_POST['rememberme'], time()+3600);
+  }
+
 
   // VERIFICATION
   // LOGIN
@@ -74,9 +78,6 @@ if(!empty($_POST['submit'])) {
   }
 }
 
-if(!empty($_POST['rememberme'])) {
-  setcookie('rememberme', $_POST['rememberme'], time()+3600);
-}
 
  ?>
 
@@ -99,7 +100,7 @@ if(!empty($_POST['rememberme'])) {
 
     <input type="submit" name="submit" class="submitInsc btn" value="Se connecter !"><br>
     <input type="checkbox" name="rememberme" value="1">Remember Me<br />
-    <a href="forgot.php">Mot de passe oublié ? (comme un con !)</a><br>
+    <a href="forgot.php">Mot de passe oublié ?</a><br>
 
 
   </form>
