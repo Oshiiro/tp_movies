@@ -10,18 +10,8 @@ $sql = "SELECT * FROM movies_full
   $query->execute();
   $randomId = $query->fetchAll();
 
-
-// traitement du bouton + de film
-if (!empty($_POST['plusDeFilm'])) {
-  $sql = "SELECT * FROM movies_full
-          ORDER BY RAND()
-          LIMIT 5";
-    $query = $pdo->prepare($sql);
-    $query->execute();
-    $randomId2 = $query->fetchAll();
-}
-
  ?>
+
 <?php include ('include/header.php'); ?>
 
 <div class="container">
@@ -94,13 +84,13 @@ if (!empty($_POST['plusDeFilm'])) {
           </select>
         </div>
       </div>
-      <div class="center">
-        <input class="hidden buttonrecherche2 btn btn-success" type="submit" name="buttonrecherche2" placeholder="Trouver un film">
-      </div>
-    </form>
-    <div class="center">
-      <input class="buttonrecherche1 btn btn-success" type="button" name="buttonrecherche1" value="RECHERCHE">
     </div>
+    <div class="center">
+      <input class="hidden buttonrecherche2 btn btn-success" type="submit" name="buttonrecherche2" value="RECHERCHE" placeholder="Trouver un film">
+    </div>
+  </form>
+  <div class="center">
+    <input class="buttonrecherche1 btn btn-success" type="button" name="buttonrecherche1" value="RECHERCHE">
   </div>
 </div>
 <div class="choixchoix col-lg-12">
@@ -110,34 +100,21 @@ if (!empty($_POST['plusDeFilm'])) {
 =======
 >>>>>>> c09fb1a32668d9fa9ac45b3fe7fff8355ba25fa5
     <h4>Téma ça mon srab</h4>
-    <?php if (!empty($_POST['plusDeFilm'])) { ?>
-      <?php foreach ($randomId2 as $key): ?>
+
+      <?php foreach ($randomId as $key) { ?>
         <a href="single.php?slug=<?php echo($key['slug']);?>">
           <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
                   echo '<img src="posters/' .$key['id']. '.jpg" alt=""/>';
                 } else {
                   echo '<img src="http://placehold.it/205x300" title="' .$key['title']. '">';
-                }
-          ?>
+                } ?>
         </a>
-      <?php endforeach; ?>
-    <?php } else { ?>
-      <?php foreach ($randomId as $key): ?>
-        <a href="single.php?slug=<?php echo($key['slug']);?>">
-          <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
-                  echo '<img src="posters/' .$key['id']. '.jpg" alt=""/>';
-                } else {
-                  echo '<img src="http://placehold.it/205x300" title="' .$key['title']. '">';
-                }
-          ?>
-        </a>
-      <?php endforeach; ?>
     <?php } ?>
   </div>
   <div class="choix col-lg-12">
     <form action="" method="post">
       <div class="col-lg-12 center">
-        <input type="submit" name="plusDeFilm" class="btn btn-success" value="+ De FILM">
+        <button id="plusDeFilm" type="button" name="plusDeFilm" class="btn btn-success">+ De FILM</button>
       </div>
     </form>
   </div>

@@ -44,6 +44,7 @@
               </div>
             </div>
             <button type="button" class="boutonajoute btn" name="button">à voir!</button>
+            <button id="zoneTel" type="button" name="" class="btn">Telecharger ce film</button>
             <button type="button" class="hidden boutonretire btn" name="button"></button>
           </div>
         </div>
