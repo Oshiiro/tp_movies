@@ -75,10 +75,15 @@
             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $movie['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $movie['rating'] . '%'?> ">
               <!-- <span class="sr-only">40% Complete (success)</span> -->
             </div>
+
+
+
           </div>
-          <form action="" method="POST">
-            <input type="submit" class="boutonajoute btn" name="submit" value="A voir">
-          </form>
+          <?php if (isLogged()) { ?>
+            <form action="" method="POST">
+              <input type="submit" class="boutonajoute btn" name="submit" value="A voir">
+            </form>
+          <?php } else { echo '<a href="connexion.php">Connect toi connard !</a>'; }?>
           <!-- <button id="zoneTel" type="button" name="" class="btn">Telecharger ce film</button> -->
           <button type="button" class="hidden boutonretire btn" name="button"></button>
         </div>
