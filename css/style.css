@@ -141,7 +141,7 @@ color : yellow;}
 label {
 font-family: courier;}
 
-.submitInsc  {
+.submitInsc, .vu, .notefilm {
   width: 150px;
   background-color: rgb(92, 184, 92);
   margin-bottom : 20px;

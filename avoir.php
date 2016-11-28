@@ -5,7 +5,7 @@
 
 <?php
 $idSession = $_SESSION['user']['id'];
-
+  // $id_movie = $aVoirs['idd'];
   $sql = "SELECT movies_full.id as idd, movies_full.title
           FROM movies_user_note
           LEFT JOIN movies_full ON movies_user_note.id_movie = movies_full.id
@@ -17,6 +17,10 @@ $idSession = $_SESSION['user']['id'];
   $aVoirs = $query->fetchAll();
 
 
+// Retirer le film si vu
+
+
+// Afficher possibilité de NOTATION
 ?>
 
 <?php require('include/header.php') ?>
@@ -33,11 +37,13 @@ $idSession = $_SESSION['user']['id'];
         }
         ?>
         <div class="infofilm col-md-12">
-
+          <form class ="class" method ="POST" action="delete.php">
+            <a href="delete.php?id=<?php echo $aVoir['idd'] ?>" class"vu">Vu</a>
+            <button type="button" name="button" class ="btn notefilm">Note ce film !</button>
+          </form>
         </div>
       </div>
       <?php } ?>
-      <input type="button" name="a_noter" value="Note ce film!">
       <a href="index.php">Retour à l'index</a>
   </div>
 </div>
