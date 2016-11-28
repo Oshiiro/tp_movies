@@ -20,22 +20,26 @@ $idSession = $_SESSION['user']['id'];
 ?>
 
 <?php require('include/header.php') ?>
+<div class="container">
+  <div class="row">
+    <?php
+    foreach ($aVoirs as $aVoir) { ?>
+      <div class="col-md-12">
+        <h4><?php echo $aVoir['title'] ?></h4>
+        <?php if (file_exists('posters/' .$aVoir['id']. '.jpg')) {
+          echo '<img src="posters/' .$aVoir['id']. '.jpg" alt=""/>';
+        } else {
+          echo '<img src="http://placehold.it/205x300" title="' .$aVoir['title']. '">';
+        }
+        ?>
+        <div class="infofilm col-md-12">
 
-<?php
-foreach ($aVoirs as $aVoir) { ?>
-  <div class="col-lg-6 col-lg-offset-3">
-    <h4><?php echo $aVoir['title'] ?></h4>
-    <?php if (file_exists('posters/' .$aVoir['id']. '.jpg')) {
-            echo '<img src="posters/' .$aVoir['id']. '.jpg" alt=""/>';
-          } else {
-            echo '<img src="http://placehold.it/205x300" title="' .$aVoir['title']. '">';
-          }
-    ?>
-    <div class="infofilm col-lg-9">
-
-    </div>
+        </div>
+      </div>
+      <?php } ?>
+      <input type="button" name="a_noter" value="Note ce film!">
+      <a href="index.php">Retour à l'index</a>
   </div>
-
-<?php } ?>
+</div>
 
 <?php require('include/footer.php') ?>

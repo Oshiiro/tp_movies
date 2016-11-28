@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <?php include ('include/functions.php'); ?>
 <?php include ('include/pdo.php'); ?>
 <?php include ('include/header.php'); ?>
@@ -84,12 +84,14 @@ $token = trim(strip_tags($_GET['token']));
             $sq->bindValue(':token', $token, PDO::PARAM_INT);
             $sq->execute();
 
+            header('Location: connexion.php');
+
             $motdepassechanger == true;
 
 
       } else { echo 'une erreur est survenue';}
     } else { echo 'une erreur est survenue';}
-  }  else { echo 'une erreur est survenue';}
+  }  else { echo 'Aucun email';}
 
 }
 ?>
@@ -114,9 +116,7 @@ $token = trim(strip_tags($_GET['token']));
   <input type="submit" name="submit" class="btn btn-default" value="Modifier MDP"></input>
 </form>
 <?php }
- } else {
- echo '<h4>Mot de passe modifié<br><a href="connexion.php" >Se connecter</a></h4><br>';
-}
+ } 
 ?>
 
 

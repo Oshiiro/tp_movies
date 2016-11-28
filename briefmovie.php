@@ -66,6 +66,8 @@
 // Ce système d’inscription permettra aux internautes de sauvegarder de manière durable les films qu’ils souhaitent voir en base de données,
 // et éventuellement plusieurs autres fonctionnalités interactives.
 
+
+
 /////////////////////////    PAGE DÉTAILS
 
 // - Bouton « à voir »
