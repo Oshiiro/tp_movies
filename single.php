@@ -23,16 +23,19 @@
     }
     $id_user = $_SESSION['user']['id'];
 
-    $sql = "SELECT id FROM movies_user_note WHERE id_user=:id_user AND id_movie=:id_movie";
+    $sql = "SELECT * FROM movies_user_note WHERE id_user=:id_user AND id_movie=:id_movie";
     $query = $pdo->prepare($sql);
     $query->bindValue(':id_movie', $id_movie, PDO::PARAM_INT);
     $query->bindValue(':id_user', $id_user, PDO::PARAM_INT);
     $query->execute();
     $ajoutExist = $query->fetch();
 
+
+
     if (!empty($ajoutExist)) {
       //Le film est deja dans la BDD
     } else {
+
       //Si non : On l'ajoute
       $ajoutAVoir = "INSERT INTO movies_user_note (id_movie, id_user, note, created_at, status) VALUES(:id_movie, :id_user, 0, now(), 1)";
       //preparation de la requete
@@ -41,6 +44,9 @@
       $query->bindValue(':id_movie', $id_movie, PDO::PARAM_STR);
       $query->bindValue(':id_user', $id_user, PDO::PARAM_STR);
       $query->execute();
+
+
+
     }
   }
 
@@ -80,12 +86,17 @@
 
           </div>
           <?php if (isLogged()) { ?>
+            <?php if($ajoutExist['status'] == 1) { ?>
+              <a href="delete.php?id=<?php echo $movie['id'] ?>"><button type="button" class="boutonretire btn" name="button">Retirer</button></a>
+              <?php } else { ?>
             <form action="" method="POST">
               <input type="submit" class="boutonajoute btn" name="submit" value="A voir">
             </form>
-          <?php } else { echo '<a href="connexion.php">Connect toi connard !</a>'; }?>
+          <?php } ?>
           <!-- <button id="zoneTel" type="button" name="" class="btn">Telecharger ce film</button> -->
-          <button type="button" class="hidden boutonretire btn" name="button"></button>
+
+        <?php } else { echo '<a href="connexion.php">Connect toi connard !</a>'; } ?>
+
         </div>
       <?php } ?>
     <?php } ?>
