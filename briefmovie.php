@@ -40,14 +40,18 @@
 // Ce formulaire doit être caché par défaut, car ce n’est pas ce que nous voulons mettre en l’avant, et ne s’afficher que sur clic d’un bouton « Filtres ».
 // Il doit s’afficher en animation.
 
+
 ///////////////////////////  PAGE DE DETAILS
 // Outre l’affichage du poster et de tous les détails du film, les éléments suivants doivent être présents :
 	// - Pretty Url
 		// - L’url de ces pages de détails devrait contenir la version normalisée du titre du film (slug). Et tant qu’à y être,
     // faites tout votre possible pour référencer au mieux cette page par rapport au titre du film et de son année de réalisation.
+
+
+// ----------------------------------------------------------------------------------------
 	// - Boutons sociaux (options => a faire à la fin si encore du temps)
 		// Il doit être possible de partager simplement soit Facebook, Twitter, linkedin, et Google + le film actuellement visionné.
-
+//  ---------------------------------------------------------------------------------------------
 
 //======================================================================
 //  ETAPE 2

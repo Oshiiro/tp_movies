@@ -1,5 +1,4 @@
-<?php session_start() ?>
-
+<?php session_start(); ?>
 <?php include ('include/pdo.php'); ?>
 <?php include ('include/functions.php'); ?>
 <?php
@@ -68,8 +67,8 @@ $sql = "SELECT * FROM movies_full
           </select>
         </div>
 
-        <div class ="popularite col-md-4" >
-          <h4> Catégories </h4>
+        <div class ="popularite col-lg-4" >
+          <h4> Popularité </h4>
           <br>
           <select class="selectpopularite" name="popularite">
             <option value="">-</option>
@@ -107,14 +106,13 @@ $sql = "SELECT * FROM movies_full
                     } ?>
             </a>
         <?php } ?>
-      </div>
-      <div class="choix col-lg-12">
         <form action="" method="post">
-          <div class="col-lg-12 center">
-            <button id="plusDeFilm" type="button" name="plusDeFilm" class="btn btn-success">+ De FILM</button>
+          <div class="col-md-12 center">
+            <button id="plusDeFilm" type="button" name="plusDeFilm" class="btn btn-success plusdefilm">+ De FILM</button>
           </div>
         </form>
       </div>
+
     </div> <!-- Div CHOIXCHOIX -->
   </div> <!-- Div row -->
 </div> <!-- Div container -->
