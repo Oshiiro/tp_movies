@@ -17,6 +17,7 @@
   }
 
 //AJOUT DU FILM DANS LA LISTE "A VOIR"
+
   if (!empty($_POST['submit'])) {
     foreach ($movies as $movie) {
       $id_movie = $movie['id'];
