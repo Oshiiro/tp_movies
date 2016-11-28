@@ -18,20 +18,17 @@
 
 //AJOUT DU FILM DANS LA LISTE "A VOIR"
 
-  if (!empty($_POST['submit'])) {
-    foreach ($movies as $movie) {
-      $id_movie = $movie['id'];
-    }
-    $id_user = $_SESSION['user']['id'];
-
-    $sql = "SELECT * FROM movies_user_note WHERE id_user=:id_user AND id_movie=:id_movie";
-    $query = $pdo->prepare($sql);
-    $query->bindValue(':id_movie', $id_movie, PDO::PARAM_INT);
-    $query->bindValue(':id_user', $id_user, PDO::PARAM_INT);
-    $query->execute();
-    $ajoutExist = $query->fetch();
-
+  foreach ($movies as $movie) {
+    $id_movie = $movie['id'];
   }
+  $id_user = $_SESSION['user']['id'];
+
+  $sql = "SELECT status FROM movies_user_note WHERE id_user=:id_user AND id_movie=:id_movie";
+  $query = $pdo->prepare($sql);
+  $query->bindValue(':id_movie', $id_movie, PDO::PARAM_INT);
+  $query->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+  $query->execute();
+  $ajoutExist = $query->fetch();
 
  ?>
 
@@ -64,7 +61,6 @@
             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $movie['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $movie['rating'] . '%'?> ">
               <!-- <span class="sr-only">40% Complete (success)</span> -->
             </div>
-
 
 
           </div>
