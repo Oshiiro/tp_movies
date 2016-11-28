@@ -87,30 +87,31 @@ $sql = "SELECT * FROM movies_full
     <input class="buttonrecherche1 btn btn-success" type="button" name="buttonrecherche1" value="RECHERCHE">
   </div>
 </div>
-<div class="choixchoix col-lg-12">
-  <div class="col-lg-12 films" style="text-align : center">
-    <h4>Téma ça mon srab</h4>
-
-      <?php foreach ($randomId as $key) { ?>
-        <a href="single.php?slug=<?php echo($key['slug']);?>">
-          <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
-                  echo '<img src="posters/' .$key['id']. '.jpg" alt=""/>';
-                } else {
-                  echo '<img src="http://placehold.it/205x300" title="' .$key['title']. '">';
-                } ?>
-        </a>
-    <?php } ?>
-  </div>
-  <div class="choix col-lg-12">
-    <form action="" method="post">
-      <div class="col-lg-12 center">
-        <button id="plusDeFilm" type="button" name="plusDeFilm" class="btn btn-success">+ De FILM</button>
+<div class="container">
+  <div class="row">
+    <div class="choixchoix col-md-12">
+      <div class="col-md-12 films" style="text-align : center">
+        <h4>Téma ça mon srab</h4>
+          <?php foreach ($randomId as $key) { ?>
+            <a href="single.php?slug=<?php echo($key['slug']);?>">
+              <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
+                      echo '<img src="posters/' .$key['id']. '.jpg" alt=""/>';
+                    } else {
+                      echo '<img src="http://placehold.it/205x300" title="' .$key['title']. '">';
+                    } ?>
+            </a>
+        <?php } ?>
       </div>
-    </form>
-  </div>
-</div> <!-- Div CHOIXCHOIX -->
+      <div class="choix col-lg-12">
+        <form action="" method="post">
+          <div class="col-lg-12 center">
+            <button id="plusDeFilm" type="button" name="plusDeFilm" class="btn btn-success">+ De FILM</button>
+          </div>
+        </form>
+      </div>
+    </div> <!-- Div CHOIXCHOIX -->
+  </div> <!-- Div row -->
+</div> <!-- Div container -->
 <!-- Notes -->
-
-</div> <!-- fin container -->
 
 <?php include 'include/footer.php'; ?>
