@@ -16,7 +16,7 @@ $sql = "SELECT * FROM movies_full
 
 <div class="container">
   <div class="row">
-    <form class="" action="search.php" method="GET">
+    <form class="" id="recherche" action="search.php" method="GET">
       <div class="choixchoix hidden">
         <label for="usr">Recherche (titre du film, acteurs, réalisateurs) </label>
         <input type="text" class="form-control" name="searching" id="director">
@@ -25,7 +25,7 @@ $sql = "SELECT * FROM movies_full
             <div class="form-group">
               <h4>Genres</h4>
               <br>
-              <label for="genres"></label>
+              <label for="genres" id="genres"></label>
               <input type="checkbox" name="genres[]" value="Drama" /> Drama
               <input type="checkbox" name="genres[]" value="Action" /> Action
               <input type="checkbox" name="genres[]" value="Adventure" /> Adventure
@@ -43,6 +43,9 @@ $sql = "SELECT * FROM movies_full
               <input type="checkbox" name="genres[]" value="Comedy" />Comedy
               <input type="checkbox" name="genres[]" value="Biography" />Biography
               <input type="checkbox" name="genres[]" value="Animation" />Animation
+              <br>
+              <input type="button" id="allGenres" value="Tout cocher"/>
+              <input type="button" id="noGenres" value="Tout décocher"/>
             </div>
           </div>
         </div>
