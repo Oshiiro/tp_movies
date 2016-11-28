@@ -95,6 +95,9 @@ margin-right: auto;
 }
 
 /* FOOTER: */
+html {
+height: 100%;
+}
 
 .footer {
 padding : 10px;
@@ -104,13 +107,18 @@ background-color: orange;
 text-align: center;
 font-family: courier;
 color : white;
-position : fixed;
 bottom : 0;
+position : absolute;
+margin-top: 50px;
 }
 
 body {
 background-color: lemonchiffon;
 padding-bottom: 50px;
+min-height: 100%;
+padding : 0;
+margin : 0;
+position : relative;
 }
 
 .categories, .annees, .popularite {
@@ -136,10 +144,6 @@ font-family: courier;}
 text-align: center;
 
 }
-
-
-
-
 
 
 .selectyear, .selectpopularite {

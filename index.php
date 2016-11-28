@@ -65,7 +65,7 @@ $sql = "SELECT * FROM movies_full
         </div>
 
         <div class ="popularite col-lg-4" >
-          <h4> Catégories </h4>
+          <h4> Popularité </h4>
           <br>
           <select class="selectpopularite">
             <optgroup label="Popularité" name="popularité">
