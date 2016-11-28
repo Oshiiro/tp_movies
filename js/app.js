@@ -1,4 +1,3 @@
-
 // affichage de la recherche
 $('.buttonrecherche1').click(function(e) {
   e.preventDefault();
@@ -7,6 +6,7 @@ $('.buttonrecherche1').click(function(e) {
   $('.buttonrecherche1').addClass('hidden');
   $('.choixchoix').removeClass('hidden');
 });
+
 
 // désaffichage de la recherche
 $('.retour').click(function(e) {
