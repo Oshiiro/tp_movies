@@ -40,21 +40,35 @@ $idSession = $_SESSION['user']['id'];
           <form class ="class" method ="POST" action="delete.php">
             <button class="btn notefilm"><a href="delete.php?id=<?php echo $aVoir['idd'] ?>" class"vu">Vu</a></button>
             <button type="button" name="button" class ="btn notefilm">Note ce film !</button>
-          </form>
             <!-- Systeme de notation -->
-          <div class="progress2">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $movie['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $movie['rating'] . '%'?> ">
-              <!-- <span class="sr-only">40% Complete (success)</span> -->
+          </form>
+          <p> Votre note </p>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+            aria-valuemin="0" aria-valuemax="100" style="width:70%">
+
+            </div>
           </div>
 
-        </div>
+          <select class="form-control">
+            <?php
+            $j = 2;
+            echo "<br/>";
+            for ($i=0;$i<=100;$i++){
 
+            echo "<option>" . $i . "</option>";
+            echo "<br/>";
 
+            }
+            ?>
+          </select>
 
+          </div>
 
-        <button class="btn btn-warning"><a href="index.php">Retour à l'index</a></button>
       </div>
+      <button class="btn btn-warning"><a href="index.php">Retour à l'index</a></button>
       <?php } ?>
+    </div>
   </div>
 </div>
 
