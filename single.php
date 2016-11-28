@@ -31,7 +31,7 @@
     $query->execute();
     $ajoutExist = $query->fetch();
 
-  // }
+  }
 
  ?>
 
@@ -77,7 +77,6 @@
           <!-- <button id="zoneTel" type="button" name="" class="btn">Telecharger ce film</button> -->
 
         <?php } else { echo '<a href="connexion.php">Se connecter</a>'; } ?>
-
         </div>
       <?php } ?>
     <?php } ?>
