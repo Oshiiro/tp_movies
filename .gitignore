@@ -2,3 +2,4 @@ posters/
 include/pdo.php
 include/pdo_local.php
 briefmovie.php
+vendor/
