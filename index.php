@@ -16,14 +16,8 @@ $sql = "SELECT * FROM movies_full
 
 <div class="container">
   <div class="row">
-<<<<<<< HEAD
-    <form class="choixchoix" action="" method="post">
-    <div class="">
-
-=======
     <form class="" action="search.php" method="GET">
       <div class="choixchoix hidden">
->>>>>>> c09fb1a32668d9fa9ac45b3fe7fff8355ba25fa5
         <label for="usr">Recherche (acteur, directeur..) </label>
         <input type="text" class="form-control" name="searching" id="director">
         <div class ="categories col-lg-4" >
@@ -95,10 +89,6 @@ $sql = "SELECT * FROM movies_full
 </div>
 <div class="choixchoix col-lg-12">
   <div class="col-lg-12 films" style="text-align : center">
-<<<<<<< HEAD
-    <input type="submit" name="buttonrecherche" value="RECHERCHE">
-=======
->>>>>>> c09fb1a32668d9fa9ac45b3fe7fff8355ba25fa5
     <h4>Téma ça mon srab</h4>
 
       <?php foreach ($randomId as $key) { ?>
