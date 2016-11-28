@@ -1,5 +1,8 @@
+<?php session_start() ?>
+
 <?php require('include/pdo.php'); ?>
 <?php require('include/functions.php'); ?>
+
 <?php
 $sql ='SELECT * FROM movies_full';
 
