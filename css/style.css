@@ -26,7 +26,7 @@ color: white;
   margin-top: 2em;
 }
 
-.buttonrecherche2 {
+.buttonrecherche2, .retour {
   margin-top: 2em;
 }
 
@@ -46,10 +46,12 @@ width : auto;
 }
 
 .choixchoix {
-text-align: center;}
+text-align: center;
+margin-top: 2em;
+}
 
 .films {
-  padding : 60px;
+  padding : 30px;
 }
 
 .btnafficherecherche {

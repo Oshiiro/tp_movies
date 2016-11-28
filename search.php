@@ -3,6 +3,11 @@
 <?php
 $recherche = $_GET['searching'];
 
+if(!empty($_GET['buttonrecherche2'])) {
+  debug($_GET);
+  die();
+}
+
 if (!empty($recherche)) {
   $sql = "SELECT * FROM movies_full
           WHERE title LIKE :search

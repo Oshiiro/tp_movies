@@ -3,8 +3,17 @@
 $('.buttonrecherche1').click(function(e) {
   e.preventDefault();
   $('.buttonrecherche2').removeClass('hidden');
+  $('.retour').removeClass('hidden');
   $('.buttonrecherche1').addClass('hidden');
   $('.choixchoix').removeClass('hidden');
+});
+
+$('.retour').click(function(e) {
+  e.preventDefault();
+  $('.buttonrecherche2').addClass('hidden');
+  $('.retour').addClass('hidden');
+  $('.buttonrecherche1').removeClass('hidden');
+  $('.choixchoix').addClass('hidden');
 });
 
 $('#plusDeFilm').click(function() {
