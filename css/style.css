@@ -169,10 +169,11 @@ text-align: center;
 }
 .rating-input {
     position: absolute;
-    left: 0;
-    top: -50px;
+    overflow: hidden;
+
 }
 .rating-star {
+    position : relative;
     display: block;
     float: right;
     width: 16px;

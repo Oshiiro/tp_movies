@@ -10,7 +10,7 @@ $idSession = $_SESSION['user']['id'];
           FROM movies_user_note
           LEFT JOIN movies_full ON movies_user_note.id_movie = movies_full.id
           LEFT JOIN users ON movies_user_note.id = users.id
-          WHERE movies_user_note.status = 1 AND movies_user_note.id_user = :id_user";
+          WHERE movies_user_note.status = 0 AND movies_user_note.id_user = :id_user";
   $query = $pdo->prepare($sql);
   $query->bindValue(':id_user', $idSession, PDO::PARAM_INT);
   $query->execute();
