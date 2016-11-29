@@ -26,10 +26,6 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
 
 
 
-$sql = "UPDATE movies_user_note
-        SET note = 20, status = 2";
-
-
 
 
 
@@ -58,24 +54,28 @@ $sql = "UPDATE movies_user_note
             <p><u>NOTER CE FILM</u></p>
 
             <span class="rating">
-
-              <input type="radio" class="rating-input"
+            <form method="POST" action="vote.php">
+              <input type="radio" class="rating-input hidden" value="100"
                   id="rating-input-1-5" name="rating-input-1">
               <label for="rating-input-1-5" class="rating-star"></label>
-              <input type="radio" class="rating-input"
+              <input type="radio" class="rating-input hidden"  value="80"
                   id="rating-input-1-4" name="rating-input-1">
               <label for="rating-input-1-4" class="rating-star"></label>
-              <input type="radio" class="rating-input"
+              <input type="radio" class="rating-input hidden"  value="60"
                   id="rating-input-1-3" name="rating-input-1">
               <label for="rating-input-1-3" class="rating-star"></label>
-              <input type="radio" class="rating-input"
+              <input type="radio" class="rating-input hidden" value="40"
                   id="rating-input-1-2" name="rating-input-1">
               <label for="rating-input-1-2" class="rating-star"></label>
-              <input type="radio" class="rating-input"
+              <input type="radio" class="rating-input hidden" value="20"
                   id="rating-input-1-1" name="rating-input-1">
               <label for="rating-input-1-1" class="rating-star"></label>
 
+              <input type="hidden" name="idmovie" value="<?php echo $filmv['id']; ?>" />
+              <input type="submit" name="voter" value="Votez">
+            </form>
             </span>
+
 
 
     <?php } else {  ?>
