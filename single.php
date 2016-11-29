@@ -16,8 +16,7 @@
     $movies = $query->fetchAll();
   }
 
-//AJOUT DU FILM DANS LA LISTE "A VOIR"
-
+  //AJOUT DU FILM DANS LA LISTE "A VOIR"
   foreach ($movies as $movie) {
     $id_movie = $movie['id'];
   }
@@ -61,11 +60,10 @@
             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $movie['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $movie['rating'] . '%'?> ">
               <!-- <span class="sr-only">40% Complete (success)</span> -->
             </div>
-
-
           </div>
-          <?php if (isLogged()) { ?>
-            <?php if($ajoutExist['status'] == 1) { ?>
+
+          <?php if (isLogged()) {  ?>
+            <?php if (toSee($id_movie, $id_user)) { ?>
               <a href="delete.php?id=<?php echo $movie['id'] ?>"><button type="button" class="boutonretire btn" name="button">Retirer</button></a>
               <?php } else { ?>
               <a href="ajoutAVoir.php?id=<?php echo $movie['id'] ?>"><button type="button" class="boutonretire btn" name="button">A voir</button></a>

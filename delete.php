@@ -16,11 +16,11 @@
 print_r($retire);
   if(!empty($retire)) {
 
-  $sql = "UPDATE movies_user_note SET status = 0 WHERE id_movie = $id";
+  $sql = "UPDATE movies_user_note SET status = 1 WHERE id_movie = $id";
   $query->bindValue(':id', $id, PDO::PARAM_INT);
   $query = $pdo->prepare($sql);
   $query->execute();
-  header('Location: avoir.php');
+  header('Location: index.php');
   exit();
   }
 
