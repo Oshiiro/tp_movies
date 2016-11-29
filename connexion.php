@@ -83,28 +83,28 @@ if(!empty($_POST['submit'])) {
 
 <?php include 'include/header.php' ?>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br><br>
+      <div class="success" id="reponse_formconnexion"></div>
+      <form id="connexion" class="connexion" action="" method="POST">
+        <h4>Connexion</h4>
 
-<div class="container col-lg-4 col-lg-offset-4">
-  <br><br>
-  <div class="success" id="reponse_formconnexion"></div>
-  <form id="connexion" class="connexion" action="" method="POST">
-    <h4>Connexion</h4>
+        <label for="login">Pseudo ou E-mail:</label><br>
+        <input type="text" class="form-control" name="login" value="<?php if (!empty($_POST['login'])) { echo ($_POST['login']); } ?>"><br>
+        <span class="error"><?php if (!empty($error['login'])) { echo ($error['login']); } ?></span><br>
 
-    <label for="login">Pseudo ou E-mail:</label><br>
-    <input type="text" class="form-control" name="login" value="<?php if (!empty($_POST['login'])) { echo ($_POST['login']); } ?>"><br>
-    <span class="error"><?php if (!empty($error['login'])) { echo ($error['login']); } ?></span><br>
+        <label for="mdp">Mot de passe :</label><br>
+        <input type="password" class="form-control" name="mdp" value="<?php if (!empty($_POST['mdp'])) { echo ($_POST['mdp']); } ?>"><br>
+        <span class="error"><?php if (!empty($error['mdp'])) { echo ($error['mdp']); } ?></span><br>
 
-    <label for="mdp">Mot de passe :</label><br>
-    <input type="password" class="form-control" name="mdp" value="<?php if (!empty($_POST['mdp'])) { echo ($_POST['mdp']); } ?>"><br>
-    <span class="error"><?php if (!empty($error['mdp'])) { echo ($error['mdp']); } ?></span><br>
-
-    <input type="submit" name="submit" class="submitInsc btn" value="Se connecter !"><br>
-    <input type="checkbox" name="rememberme" value="1">Remember Me<br />
-    <a href="forgot.php">Mot de passe oublié ?</a><br>
-
-
-  </form>
-
+        <input type="submit" name="submit" class="submitInsc btn" value="Se connecter !"><br>
+        <input type="checkbox" name="rememberme" value="1">Remember Me<br />
+        <a href="forgot.php">Mot de passe oublié ?</a><br>
+      </form>
+    </div>
+  </div>
 </div>
 
 
