@@ -21,7 +21,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Movies</a>
+            <a class="navbar-brand" href="index.php">BEST MOVIES EVER</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,8 +30,9 @@
               <?php if (isLogged()) { ?>
               <li><a class="noPointer">Bienvenue <?php echo $_SESSION['user']['pseudo']; ?></a></li>
               <?php } ?>
-              <li> <a href="affiche.php">FILMS</a></li>
-              <li> <a href="avoir.php">FILMS A VOIR!</a></li>
+              <li> <a href="affiche_back.php">AJOUTER UN FILM +</a></li>
+              <li> <a href="affiche_back.php">LISTE FILM</a></li>
+              <li> <a href="statistiques_back.php">STATISTIQUE</a></li>
               <li> <a href="index.php">FRONT OFFICE</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
