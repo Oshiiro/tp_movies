@@ -29,11 +29,13 @@ if(!empty($_GET['buttonrecherche2'])) {
   // genres
   if(!empty($_GET['genres'])) {
     $genres = $_GET['genres'];
-    function forGenres($array) {
-      foreach ($array as $key) {
-        $variable = "AND genre = '".$key."'";
-        echo $variable.'<br>';
-      };
+    $countGenres = count($genres);
+    // foreach ($genres as $key) {
+    //   $sql .= " AND genres = '".$key."'";
+    // };
+    $sql .= " AND genres = '".$genres[0]."'";
+    for ($i=1; $i < $countGenres ; $i++) {
+      $sql .= " OR genres = '".$genres[$i]."'";
     }
   }
   // annees
