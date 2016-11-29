@@ -160,13 +160,13 @@ if(!empty($_GET['buttonrecherche2'])) {
           <?php foreach ($randomId as $key) { ?>
             <a href="single.php?slug=<?php echo($key['slug']);?>">
               <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
-                      echo '<img src="posters/' .$key['id']. '.jpg" alt=""/>';
+                      echo '<img src="posters/' .$key['id']. '.jpg" title="' .$key['title']. '"/>';
                     } else {
                       echo '<img src="http://placehold.it/205x300" title="' .$key['title']. '">';
                     } ?>
             </a>
         <?php } ?>
-        <form action="" method="post">
+        <form action="" method="POST">
           <div class="col-md-12 center">
             <button id="plusDeFilm" type="button" name="plusDeFilm" class="btn btn-success plusdefilm">+ De FILM</button>
           </div>

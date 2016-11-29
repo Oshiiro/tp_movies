@@ -37,3 +37,24 @@ $('#allGenres').click(function() {
 $('#noGenres').click(function() {
   $("input[type=checkbox]").prop( "checked", false )
 });
+
+
+//  NOTATION étoiles
+
+$('#rating-input-1-1').click(function(e) {
+  e.preventDefault();
+
+      $.ajax({
+        method : "POST",
+        url : url,
+        data : $(this).serialize(),
+        success : function(response) {
+          console.log("SUCCESS", response);
+
+          $('.votrenote').html( "Cimer pour le vote!");
+
+        } // Success
+      }) // Ajax POST
+
+
+})

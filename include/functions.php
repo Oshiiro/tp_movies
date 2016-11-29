@@ -26,7 +26,6 @@ function isLogged(){
  }
 }
 
-
 function slugify($text)
 {
   // replace non letter or digits by -
@@ -53,4 +52,56 @@ function slugify($text)
 
   return $text;
 }
+
+
+function toSee($id_movie, $id_user){
+ global $pdo;
+
+ $sql="SELECT status FROM movies_user_note WHERE id_movie = :id_movie AND id_user = :id_user";
+ $query = $pdo->prepare($sql);
+ $query->bindValue(':id_movie', $id_movie, PDO::PARAM_INT);
+ $query->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+ $query->execute();
+ $result = $query->fetchAll();
+
+ if (!empty($result[0]) && $result[0]['status'] == 1) {
+   return true;
+ } else {
+   return false;
+ }
+}
+function isSeen($id_movie, $id_user){
+ global $pdo;
+
+ $sql="SELECT status FROM movies_user_note WHERE id_movie = :id_movie AND id_user = :id_user";
+ $query = $pdo->prepare($sql);
+ $query->bindValue(':id_movie', $id_movie, PDO::PARAM_INT);
+ $query->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+ $query->execute();
+ $result = $query->fetchAll();
+
+ if (!empty($result[0]) && $result[0]['status'] == 2) {
+   return true;
+ } else {
+   return false;
+ }
+}
+
+function isVoted($id_movie, $id_user){
+ global $pdo;
+
+ $sql="SELECT status FROM movies_user_note WHERE id_movie = :id_movie AND id_user = :id_user";
+ $query = $pdo->prepare($sql);
+ $query->bindValue(':id_movie', $id_movie, PDO::PARAM_INT);
+ $query->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+ $query->execute();
+ $result = $query->fetchAll();
+
+ if (!empty($result[0]) && $result[0]['status'] == 3) {
+   return true;
+ } else {
+   return false;
+ }
+}
+
 ?>
