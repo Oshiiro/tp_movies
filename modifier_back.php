@@ -103,7 +103,7 @@
       $movies_form->bindValue(':id',$id, PDO::PARAM_INT);
 
       $movies_form->execute();
-      header('location: modif_send_back.php');
+      header('location: modif_send.php');
     }
   }
 

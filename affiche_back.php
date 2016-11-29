@@ -28,7 +28,7 @@ $movies = $query->fetchAll();
          <td><?php echo $movie['year']; ?></td>
          <td><?php echo $movie['rating']; ?></td>
          <td>
-          <a href="modifier.php?id=<?php echo $movie['id']; ?>" title="Editer" >
+          <a href="modifier_back.php?id=<?php echo $movie['id']; ?>" title="Editer" >
             <i class="fa fa-file" aria-hidden="true"></i>
           </a>
         </td>

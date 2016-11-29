@@ -30,7 +30,7 @@
               <?php if (isLogged()) { ?>
               <li><a class="noPointer">Bienvenue <?php echo $_SESSION['user']['pseudo']; ?></a></li>
               <?php } ?>
-              <li> <a href="affiche_back.php">AJOUTER UN FILM +</a></li>
+              <li> <a href="createfilm_back.php">AJOUTER UN FILM +</a></li>
               <li> <a href="affiche_back.php">LISTE FILM</a></li>
               <li> <a href="statistiques_back.php">STATISTIQUE</a></li>
               <li> <a href="index.php">FRONT OFFICE</a></li>
