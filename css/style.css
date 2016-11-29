@@ -159,3 +159,12 @@ height: 30px;
   margin-top : 20px;
 text-align: center;
 }
+
+/* A VOIR */
+
+.progress2 {
+width: 200px;
+height: 16px;
+margin-left: auto;
+margin-right: auto;
+}

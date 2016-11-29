@@ -12,51 +12,58 @@ $sql = "SELECT * FROM movies_full
   $randomId = $query->fetchAll();
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//                   BARRE DE RECHERCHE
+//                 BARRE DE RECHERCHE
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 $searching = '';
 $genres = '';
 $anneesSQL = '';
 $populariteSQL = '';
 
 if(!empty($_GET['buttonrecherche2'])) {
-  $sql = '';
-  $sql .= "SELECT * FROM movies_full WHERE 1 = 1";
-
   // recherche
   if(!empty($_GET['searching'])) {
     $searching = trim(strip_tags($_GET['searching']));
-    $sql .= ' AND ( title LIKE :search OR directors LIKE :search OR cast LIKE :search )';
   }
-
   // genres
   if(!empty($_GET['genres'])) {
     $genres = $_GET['genres'];
-
-    foreach ($genres as $key) {
-      $sql .= " AND genres = '".$key."'";
-    };
-
-
+    function forGenres($array) {
+      foreach ($array as $key) {
+        $variable = "AND genre = '".$key."'";
+        echo $variable.'<br>';
+      };
+    }
   }
-
   // annees
   if(!empty($_GET['annees'])) {
     $annees = trim(strip_tags($_GET['annees']));
     $anneesStr = str_replace("-", "' AND '",$annees);
-    $sql .= " AND year BETWEEN '".$anneesStr."'";
+    $anneesSQL = "'".$anneesStr."'";
   }
-
   // popularite
   if(!empty($_GET['popularite'])) {
     $popularite = trim(strip_tags($_GET['popularite']));
     $populariteStr = str_replace("-", "' AND '",$popularite);
-    $sql .= " AND rating BETWEEN '".$populariteStr."'";
+    $populariteSQL = "'".$populariteStr."'";
   }
 
-  $sql .= " LIMIT 20";
+  // debug($_GET);
+  // die();
 
-  echo $sql;
+  echo $searching.'<br>';
+  if(!empty($_GET['genres'])) {
+    forGenres($genres);
+  }
+  echo $anneesSQL.'<br>';
+  echo $populariteSQL.'<br>';
+
+  $sql = "SELECT * FROM movies_full
+          WHERE title LIKE :search
+          OR directors LIKE :search
+          OR cast LIKE :search
+          OR popularity BETWEEN $populariteSQL";
 
   $query = $pdo->prepare($sql);
   $query->bindValue(':search','%' . $searching . '%', PDO::PARAM_STR);
@@ -67,9 +74,7 @@ if(!empty($_GET['buttonrecherche2'])) {
 
 
 }
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//                   FIN DE RECHERCHE
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 
  ?>
