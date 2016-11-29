@@ -1,7 +1,9 @@
-<?php session_start() ?>
 
 <?php require('include/pdo.php') ?>
+<?php require('include/functions.php'); ?>
 <?php require('include/header_back.php') ?>
+
+<?php session_start() ?>
 <?php
 
 
