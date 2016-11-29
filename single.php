@@ -61,9 +61,8 @@
             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $movie['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $movie['rating'] . '%'?> ">
               <!-- <span class="sr-only">40% Complete (success)</span> -->
             </div>
-
-
           </div>
+
           <?php if (isLogged()) { ?>
             <?php if($ajoutExist['status'] == 1) { ?>
               <a href="delete.php?id=<?php echo $movie['id'] ?>"><button type="button" class="boutonretire btn" name="button">Retirer</button></a>

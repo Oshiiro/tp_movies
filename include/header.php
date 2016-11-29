@@ -42,6 +42,7 @@
               <?php } ?>
               <?php if (isLogged()) {
                 echo '<li><a href="avoir.php">FILMS A VOIR !</a></li>';
+                echo '<li><a href="filmsvu.php">FILMS VUS !</a></li>';
               } ?>
               <li> <a href="affiche.php">BACK OFFICE</a></li>
               <li class="dropdown">
