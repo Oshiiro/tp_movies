@@ -4,7 +4,8 @@
 <?php require('include/functions.php'); ?>
 
 <?php
-$sql ='SELECT * FROM movies_full';
+// LA LIMITE DE 20 EST A VIREE
+$sql ='SELECT * FROM movies_full LIMIT 20';
 
 $query = $pdo->prepare($sql);
 $query->execute();
@@ -28,17 +29,16 @@ $movies = $query->fetchAll();
          <td><?php echo $movie['year']; ?></td>
          <td><?php echo $movie['rating']; ?></td>
          <td>
-          <a href="modifier_back.php?id=<?php echo $movie['id']; ?>" title="Editer" >
-            <i class="fa fa-file" aria-hidden="true"></i>
+          <a href="single.php?slug=<?php echo $movie['slug']; ?>" title="Voir">
+           <i class="fa fa-file" aria-hidden="true"></i>
+         </a>
+          <a href="modifier_back.php?id=<?php echo $movie['id']; ?>" title="Editer">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </a>
+          <a class="suppr" onclick="return confirm('Supprimer ?');" href="delete_back.php?id=<?php echo $movie['id']; ?>" title="Supprimer">
+            <i class="fa fa-close" aria-hidden="true"></i>
           </a>
         </td>
-        <td>
-        <a>
-          <i class="fa fa-window-close" aria-hidden="true"></i>
-        </a>
-        <td>
-
-       </td>
       </tr>
     <?php } ?>
   </table>
