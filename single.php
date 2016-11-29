@@ -62,9 +62,14 @@
             </div>
           </div>
 
+
           <?php if (isLogged()) {  ?>
             <?php if (toSee($id_movie, $id_user)) { ?>
               <a href="delete.php?id=<?php echo $movie['id'] ?>"><button type="button" class="boutonretire btn" name="button">Retirer</button></a>
+              <?php } else if (isSeen($id_movie, $id_user)) { ?>
+              <a href="#"><button type="button" class="boutonretire btn" name="button">Noter ce film</button></a>
+              <?php } else if (isVoted($id_movie, $id_user)) { ?>
+              <a href="#"><button type="button" class="boutonretire btn" name="button">Film vu et deja noté</button></a>
               <?php } else { ?>
               <a href="ajoutAVoir.php?id=<?php echo $movie['id'] ?>"><button type="button" class="boutonretire btn" name="button">A voir</button></a>
           <?php } ?>

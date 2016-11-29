@@ -19,7 +19,7 @@
     $id_movie = $ajoutes['0']['id'];
     $id_user = $_SESSION['user']['id'];
 
-    $ajoutAVoir = "INSERT INTO movies_user_note (id_movie, id_user, note, created_at, status) VALUES (:id_movie, :id_user, 0, now(), 0)";
+    $ajoutAVoir = "INSERT INTO movies_user_note (id_movie, id_user, note, created_at, status) VALUES (:id_movie, :id_user, 0, now(), 1)";
     //preparation de la requete
     $query = $pdo->prepare($ajoutAVoir);
     // protection des inj sql

@@ -167,7 +167,7 @@ if(!empty($_GET['buttonrecherche2'])) {
                     } ?>
             </a>
         <?php } ?>
-        <form action="" method="post">
+        <form action="" method="POST">
           <div class="col-md-12 center">
             <button id="plusDeFilm" type="button" name="plusDeFilm" class="btn btn-success plusdefilm">+ De FILM</button>
           </div>
