@@ -36,9 +36,9 @@ if(!empty($_GET['buttonrecherche2'])) {
     // foreach ($genres as $key) {
     //   $sql .= " AND genres = '".$key."'";
     // };
-    $sql .= " AND genres = '".$genres[0]."'";
+    $sql .= " AND genres LIKE '%".$genres[0]."%'";
     for ($i=1; $i < $countGenres ; $i++) {
-      $sql .= " OR genres = '".$genres[$i]."'";
+      $sql .= " OR genres LIKE '%".$genres[$i]."%'";
     }
   }
 
@@ -58,7 +58,6 @@ if(!empty($_GET['buttonrecherche2'])) {
 
   $sql .= " LIMIT 20";
 
-  echo $sql;
 
   $query = $pdo->prepare($sql);
   $query->bindValue(':search','%' . $searching . '%', PDO::PARAM_STR);
