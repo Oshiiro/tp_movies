@@ -28,10 +28,17 @@ $movies = $query->fetchAll();
          <td><?php echo $movie['year']; ?></td>
          <td><?php echo $movie['rating']; ?></td>
          <td>
-          <a href="modifier.php?id=<?php echo $movie['id']; ?>">
+          <a href="modifier.php?id=<?php echo $movie['id']; ?>" title="Editer" >
             <i class="fa fa-file" aria-hidden="true"></i>
           </a>
         </td>
+        <td>
+        <a>
+          <i class="fa fa-window-close" aria-hidden="true"></i>
+        </a>
+        <td>
+
+       </td>
       </tr>
     <?php } ?>
   </table>

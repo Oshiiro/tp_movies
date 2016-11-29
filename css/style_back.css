@@ -31,3 +31,7 @@ th {
  .modifier {
    color: white;
  }
+
+ .fa-window-close {
+   color: red;
+ }
