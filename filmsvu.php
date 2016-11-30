@@ -5,27 +5,6 @@
 
 <?php
 
-// =======================================================================================
-//                                      PAGINATION
-// =======================================================================================
-// Nombre d'idée par page
-$num = 5;
-// Numéro de page
-$page = 1;
-// Offset par défaut
-$offset = 0;
-
-// Requête pour compter le nombre d'idée dans la table
-$sql = "SELECT COUNT(id) FROM movies_user_note
-        WHERE status = 2";
-$query = $pdo->prepare($sql);
-$query->execute();
-$count = $query->fetchColumn(); // $count = nombre d'idée dans la table
-
-if (!empty($_GET['page'])) {
-  $page = trim(strip_tags($_GET['page']));
-  $offset = ($page-1)*$num;}
-
 $id_user = $_SESSION['user']['id'];
 
 $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.status, movies.id
@@ -36,19 +15,22 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
 
         WHERE notes.id_user = $id_user
         AND notes.status = 2 OR notes.status = 3
-        ORDER BY created_at DESC
-        LIMIT $offset, $num";
 
+        ORDER BY created_at DESC";
 
   $query = $pdo->prepare($sql);
   $query->execute();
   $filmvu = $query->fetchAll();
   // debug($filmvu);
 
+
+
+
+
 ?>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
 
       <h4>FILMS VUS</h4>
 
@@ -57,13 +39,12 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
         <?php if (file_exists('posters/' .$filmv['id']. '.jpg')) {
                echo '<div class="center"><img src="posters/' .$filmv['id']. '.jpg" alt=""/></div>';
              } else {
-               echo '<div class="center"><img src="http://placehold.it/205x300" title=" '.$filmv['title'].' "></div>';
+               echo '<div class="center"><img src="http://placehold.it/205x300" title="' .$filmv['title']. '</div>">';
              } ?>
           <p>Résumé : <?php echo $filmv['plot'];?></p>
           <p>Note générale : <?php echo $filmv['rating']. '/100'?></p>
           <?php if($filmv['note'] == 0) { ?>
             <p><u>NOTER CE FILM</u></p>
-
 
             <div class="rating">
             <form class="form" method="POST" action="vote.php">
@@ -89,14 +70,14 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
           </div>
 
 
+
     <?php } else {  ?>
-            <p>Votre note : <?php echo $filmv['note']. '/100'?></p>
+              <p>Votre note : <?php echo $filmv['note']. '/100'?></p>
       <?php }
-          } ?>
+              } ?>
 
     </div>
   </div>
 </div>
-<?php paginationArticleFilmVu($page, $num, $count); ?>
 
 <?php require('include/footer.php') ?>
