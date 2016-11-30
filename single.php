@@ -42,7 +42,7 @@
           <?php if (file_exists('posters/' .$movie['id']. '.jpg')) {
                   echo '<div class="center"><img src="posters/' .$movie['id']. '.jpg" alt=""/></div>';
                 } else {
-                  echo '<div class="center"><img src="http://placehold.it/205x300" title="' .$movie['title']. '</div>">';
+                  echo '<div class="center"><img src="http://placehold.it/205x300" title="' .$movie['title']. '"></div>';
                 } ?>
         </div>
         <div class="infofilm col-md-12">
