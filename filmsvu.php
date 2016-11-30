@@ -45,6 +45,34 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
   $filmvu = $query->fetchAll();
   // debug($filmvu);
 
+
+// requete étoile
+if(!empty($_POST['submit'])) {
+
+$id_user = $_SESSION['user']['id'];
+$note =  $_POST['rating-input-1'];
+$movie = $_POST['idmovie'];
+
+
+  if(!empty($_POST['idmovie'])) {
+
+    echo $note;
+    echo 'movie ' .$_POST['idmovie'];
+
+  $sql = "UPDATE movies_user_note
+          SET note = $note, status= 3
+          WHERE id_movie = $movie
+          ";
+          $query = $pdo->prepare($sql);
+          $query->execute();
+
+    }
+}
+
+// header('Location: filmsvu.php');
+
+
+
 ?>
 <div class="container">
   <div class="row">
@@ -66,7 +94,7 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
 
 
             <div class="rating">
-            <form class="form" method="POST" action="vote.php">
+            <form class="form" method="POST" action="">
               <input type="radio" class="rating-input hidden" value="100"
                   id="rating-input-1-5" name="rating-input-1">
               <label for="rating-input-1-5" class="rating-star"></label>
