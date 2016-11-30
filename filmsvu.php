@@ -54,7 +54,7 @@ $movie = $_POST['idmovie'];
 ?>
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
 
       <h4>FILMS VUS</h4>
 
@@ -63,7 +63,7 @@ $movie = $_POST['idmovie'];
         <?php if (file_exists('posters/' .$filmv['id']. '.jpg')) {
                echo '<div class="center"><img src="posters/' .$filmv['id']. '.jpg" alt=""/></div>';
              } else {
-               echo '<div class="center"><img src="http://placehold.it/205x300" title="' .$filmv['title']. '</div>">';
+               echo '<div class="center"><img src="http://placehold.it/205x300" title="' .$filmv['title']. '></div>';
              } ?>
           <p>Résumé : <?php echo $filmv['plot'];?></p>
           <p>Note générale : <?php echo $filmv['rating']. '/100'?></p>
