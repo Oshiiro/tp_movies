@@ -15,6 +15,8 @@
   $ajoutes = $query->fetchAll();
 
 
+
+
   if(!empty($ajoutes)) {
     $id_movie = $ajoutes['0']['id'];
     $id_user = $_SESSION['user']['id'];
