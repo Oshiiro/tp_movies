@@ -42,12 +42,6 @@ $idSession = $_SESSION['user']['id'];
           <button class="btn notefilm"><a href="vu.php?id=<?php echo $aVoir['idd'] ?>" class"vu">Vu</a></button>
             <!-- Systeme de notation -->
         </form>
-
-        <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $aVoir['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $aVoir['rating'] . '%'?> ">
-              <!-- <span class="sr-only">40% Complete (success)</span> -->
-          </div>
-        </div>
       </div>
       <?php } ?>
     </div>
