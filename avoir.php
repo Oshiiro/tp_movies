@@ -27,30 +27,28 @@ $idSession = $_SESSION['user']['id'];
 <?php require('include/header.php') ?>
 <div class="container">
   <div class="row">
-    <?php
-    foreach ($aVoirs as $aVoir) { ?>
-    <div class="col-md-12">
-      <h4><?php echo $aVoir['title'] ?></h4>
-      <?php if (file_exists('posters/' .$aVoir['idd']. '.jpg')) {
-        echo '<img src="posters/' .$aVoir['idd']. '.jpg" alt=""/>';
-        } else {
-          echo '<img src="http://placehold.it/205x300" title="' .$aVoir['title']. '">';
-          }
-        ?>
-      <div class="infofilm col-md-12">
-        <form class ="class" method ="POST" action="delete.php">
-          <button class="btn notefilm"><a href="vu.php?id=<?php echo $aVoir['idd'] ?>" class"vu">Vu</a></button>
-            <!-- Systeme de notation -->
-        </form>
-
-        <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $aVoir['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $aVoir['rating'] . '%'?> ">
-              <!-- <span class="sr-only">40% Complete (success)</span> -->
+    <?php foreach ($aVoirs as $aVoir) { ?>
+      <div class="col-md-12">
+        <h4><?php echo $aVoir['title'] ?></h4>
+        <?php if (file_exists('posters/' .$aVoir['idd']. '.jpg')) {
+          echo '<img src="posters/' .$aVoir['idd']. '.jpg" alt=""/>';
+          } else {
+            echo '<img src="http://placehold.it/205x300" title="' .$aVoir['title']. '">';
+            }
+          ?>
+        <div class="infofilm col-md-12">
+          <form class ="class" method ="POST" action="delete.php">
+            <button class="btn notefilm"><a href="vu.php?id=<?php echo $aVoir['idd'] ?>" class"vu">Vu</a></button>
+              <!-- Systeme de notation -->
+          </form>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $aVoir['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $aVoir['rating'] . '%'?> ">
+                <!-- <span class="sr-only">40% Complete (success)</span> -->
+            </div>
           </div>
         </div>
       </div>
-      <?php } ?>
-    </div>
+    <?php } ?>
   </div>
 </div>
 
