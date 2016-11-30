@@ -130,7 +130,7 @@
   }
 
  ?>
-
+ <?php if (isAdmin()) { ?>
 <?php require('include/header_back.php') ?>
 
 <div class="container modifier">
@@ -199,3 +199,5 @@
 </div>
 
 <?php require('include/footer.php') ?>
+
+<?php } else { echo 'Vous n\'etes pas autorisé à acceder a cette putain de page !'; } ?>

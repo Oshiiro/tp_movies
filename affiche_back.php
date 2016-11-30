@@ -36,6 +36,8 @@ $query->execute();
 $movies = $query->fetchAll();
 
  ?>
+ <?php if (isAdmin()) { ?>
+
  <?php require('include/header_back.php'); ?>
 
 <table class="container">
@@ -69,4 +71,6 @@ $movies = $query->fetchAll();
 
 <?php paginationArticle($page, $num, $count); ?>
 
- <?php require('include/footer.php') ?>
+<?php require('include/footer.php') ?>
+
+<?php } else { echo 'Vous n\'etes pas autorisé à acceder a cette putain de page !'; } ?>

@@ -11,8 +11,8 @@
   $movies = $query->fetch();
   $id = $movies['id'];
  ?>
-
-<?php require('include/header_back.php') ?>
+ <?php if (isAdmin()) { ?>
+ <?php require('include/header_back.php') ?>
 
 <div class="container modifier">
   <div class="row">
@@ -39,3 +39,5 @@
   </div>
 </div>
 <?php require('include/footer.php') ?>
+
+<?php } else { echo 'Vous n\'etes pas autorisé à acceder a cette putain de page !'; } ?>

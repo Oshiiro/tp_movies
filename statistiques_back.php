@@ -11,10 +11,11 @@
   $users = $query->fetchAll();
 
  ?>
- <?php require('include/header_back.php') ?>
- <div>
- <nav class="container-fluid">
-   <div class="row">
+  <?php if (isAdmin()) { ?>
+  <?php require('include/header_back.php') ?>
+  <div>
+    <nav class="container-fluid">
+    <div class="row">
 
      <span class="alert alert-success col-md-3" role="alert">Nombres d'utilisateurs : <?php ?></span>
 
@@ -26,3 +27,5 @@
  </nav>
 </div>
 <?php require('include/footer.php') ?>
+
+<?php } else { echo 'Vous n\'etes pas autorisé à acceder a cette putain de page !'; } ?>
