@@ -44,7 +44,7 @@
                 echo '<li><a href="avoir.php">FILMS A VOIR !</a></li>';
                 echo '<li><a href="filmsvu.php">FILMS VUS !</a></li>';
               } ?>
-              <li> <a href="statistiques_back.php">BACK OFFICE</a></li>
+              <?php if (isAdmin()) { echo '<li><a href="statistiques_back.php">BACK OFFICE</a></li>'; } ?>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="fa fa-cogs" aria-hidden="true"></i>

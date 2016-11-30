@@ -26,6 +26,28 @@ function isLogged(){
  }
 }
 
+function isAdmin(){
+  global $pdo;
+
+ if((!empty($_SESSION['user'])) && (!empty($_SESSION['user']['id'])) && (!empty($_SESSION['user']['pseudo'])) && (!empty($_SESSION['user']['status'])) && (!empty($_SESSION['user']['ip']))) {
+   $id_User = $_SESSION['user']['id'];
+   $ip = $_SERVER['REMOTE_ADDR'];
+   if($ip == $_SESSION['user']['ip']){
+
+    $sql = "SELECT status FROM users WHERE id = $id_User";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $isAdmin = $query->fetch();
+
+    if ($isAdmin['status'] === 'superadminmaster' ) {
+      return true;
+    } else {
+      return false;
+    }
+   }
+ }
+}
+
 function slugify($text)
 {
   // replace non letter or digits by -

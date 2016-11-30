@@ -23,17 +23,6 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ?>
 <div class="container">
   <div class="row">

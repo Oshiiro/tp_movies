@@ -172,7 +172,6 @@ if(!empty($_GET['buttonrecherche2'])) {
           </div>
         </form>
       </div>
-
     </div> <!-- Div CHOIXCHOIX -->
   </div> <!-- Div row -->
 </div> <!-- Div container -->
