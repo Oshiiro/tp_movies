@@ -1,8 +1,8 @@
 body {
   /*overflow:hidden;*/
-  background-image: url(http://www.my-hd-wallpapers.fr/download.php?wallpaper=1389718298&dwn=wall/1389718298_general-old-paper.jpg);
-  background-attachment: fixed;
-  width: 100%;
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQgNCA0NCAgIBw0HCAcHCA8IDQgNFREWIhURExMYHSggGBolGxUTITEhMSkrOi4uFx8/ODMtNygtLisBCgoKDQ0NDg0NDysZFRktKysrLTcrKy0rKysrKysrKysrLTcrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAKgBLAMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAAAAQIDBwT/xAAhEAEBAQEAAQQCAwAAAAAAAAAAARECEjFBcaGRsSFRYf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A89rDXTMBZBpKBFAAAAABFSgiWKoMB3MvyxQa1GV0GtSppACLiYCpI1FBnxiyKApJqN8wGCNdROQLBTAJFRQTpGqyA3GZGgZq8xGgAAAKAIoCarANiSgCxKsoJ3Nn25Ozl19AzYjS88/2CTnfhqRpARKoDMaZ00FVmsg6c2bHR87tx1s/2eoNVFQAoAgVAUoAoQBI1rnzWtBrTWNXQa1nUtTQavTM6Tqs6Dr1Wdc/KnkDXk6Tpx1ZQdLSVjS0HS9MsyroEjWoaC6VnTQaZtXUoJWdXWbAa1Kztnqug0c9Zf2mpQd9NcuOvb8N6DWms6loLaamoDUq6zpoNWud60769mAdRnTVGhnUtBbTWdS0VrU6rOoDQrOA0M6A1CoAutb/AAxFtBZfX3XWOS0GvJdc9alBqVdYvSaC0iEoNVjca1noDyNZNBrXTnrflx0lB3tTWZ1poNarMpoi6l6LXO0VoZUF0Z01RrUtTWdBrU1m0Qa1YyoNarC6BTRkGtWMa1oLaamoDWpqJoNankiAurKygOmmsSroNWprOgNMqlAVnVlBZWtY1dBrWnPTQatRnTQaXWQE1dY01RbTyZAWKhoNQ1nTQb01jV0GtLWdNBdXWNNBvU1NTQa01nQF01NQGtTUAXTUAa01k0GtTU0BTUAa01k0GtNZAa01AF01AEQAUQBRAFEAUQBRAFEAU1AFQAAAVAAAAAQFQBRBVABABAVAFEFAAUAAAAAAAAAAAAQBABAAAAUUAUABBQRBQEFQABAAAABQFUAAABABFARQEUVARAFUAEVBQRBQABVAAAAAAEUBAEQAUAEFAVQBARUEFBQARRAEAFBUUAAUAAAQAAAAARUURRQQEURUVAFQAQUBVQUEAEUAEEAAUUEURUUBAAUAUAAAAAEBAVBQQEUFAAQAQAB//9k=);
+  background-size: cover;
+  height: 100%;
 }
 /*============================================================================*/
 /*==========================      STYLE HEADER     ===========================*/
@@ -38,4 +38,17 @@ th {
 
 .fa-close {
    color: red;
+ }
+
+ .footer {
+ margin-top: 50px;
+ height: 50px;
+ width: 100%;
+ background-color: black;
+ text-align: center;
+ font-family: courier;
+ color : white;
+ bottom : 0;
+ left : 0;
+ right : 0;
  }
