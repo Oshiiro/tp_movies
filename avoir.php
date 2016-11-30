@@ -20,7 +20,6 @@ $idSession = $_SESSION['user']['id'];
 // Retirer le film si vu
 
 
-
 // Afficher possibilité de NOTATION
 ?>
 
@@ -38,10 +37,7 @@ $idSession = $_SESSION['user']['id'];
           }
         ?>
       <div class="infofilm col-md-12">
-        <form class ="class" method ="POST" action="delete.php">
-          <button class="btn notefilm"><a href="vu.php?id=<?php echo $aVoir['idd'] ?>" class"vu">Vu</a></button>
-            <!-- Systeme de notation -->
-        </form>
+        <a href="delete.php?id=<?php echo $aVoir['idd'] ?>"><button type="button" class="boutonretire btn" name="button">J'ai vu ce film</button></a>
 
         <div class="progress">
           <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php $aVoir['rating']?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $aVoir['rating'] . '%'?> ">
