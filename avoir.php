@@ -35,9 +35,9 @@ $idSession = $_SESSION['user']['id'];
           } else {
             echo '<img src="http://placehold.it/205x300" title="' .$aVoir['title']. '">';
             } ?>
-        <div class="infofilm col-md-12">
-          <a href="delete.php?id=<?php echo $aVoir['idd'] ?>"><button type="button" class="boutonretire btn" name="button">J'ai vu ce film</button></a>
-        </div>
+      <div class="infofilm col-md-12">
+        <a href="delete.php?id=<?php echo $aVoir['idd'] ?>"><button type="button" class="boutonretire btn" name="button">J'ai vu ce film</button></a>
+      </div>
     </div>
     <?php } ?>
   </div>
