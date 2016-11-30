@@ -22,7 +22,10 @@
     $cast = trim(strip_tags($_POST['cast']));
     $writers = trim(strip_tags($_POST['writers']));
     $runtime = trim(strip_tags($_POST['runtime']));
+    $mpaa = trim(strip_tags($_POST['mpaa']));
     $rating = trim(strip_tags($_POST['rating']));
+    $genres = trim(strip_tags($_POST['genres']));
+    $slug =  slugify($title.' '.$year);
 
     if(empty($title)) {
           $errors['title'] ='<span class="error">' .'Veuillez renseigner ce champ.'. '</span>';
@@ -77,6 +80,20 @@
       $errors['runtime'] ='<span class="error">' .'Veuillez renseigner ce champ.'. '</span>';
     }
 
+    if(empty($mpaa)) {
+      if(strlen($mpaa) > 11) {
+      $errors['mpaa'] = '<span class="error">' .'trop long !!'. '</span>';
+      } else {
+      $errors['mpaa'] ='<span class="error">' .'Veuillez renseigner ce champ.'. '</span>';
+      }
+    }
+
+    if(!empty($_POST['genres'])) {
+      $genres = implode(', ', $_POST['genres']);
+    } else {
+      $errors['genres'] = "Vous n'avez cocher aucun genre.";
+    }
+
     if(!empty($rating)) {
       if (is_numeric($rating)) {
         if(strlen($rating) > 3) {
@@ -89,9 +106,10 @@
 
     if(count($errors) == 0) {
 
-      $movies_send= "UPDATE movies_full SET title=:title,year=:year,plot=:plot,directors=:directors,cast=:cast,writers=:writers,runtime=:runtime,rating=:rating,modified=NOW() WHERE id = :id";
+      $movies_send= "UPDATE movies_full SET slug=:slug,title=:title,year=:year,genres=:genres,plot=:plot,directors=:directors,cast=:cast,writers=:writers,runtime=:runtime,mpaa=:mpaa,rating=:rating,modified=NOW() WHERE id = :id";
 
       $movies_form = $pdo->prepare($movies_send);
+      $movies_form->bindValue(':slug',$slug, PDO::PARAM_STR);
       $movies_form->bindValue(':title',$title, PDO::PARAM_STR);
       $movies_form->bindValue(':year',$year, PDO::PARAM_INT);
       $movies_form->bindValue(':plot',$plot, PDO::PARAM_STR);
@@ -99,11 +117,13 @@
       $movies_form->bindValue(':cast',$cast, PDO::PARAM_STR);
       $movies_form->bindValue(':writers',$writers, PDO::PARAM_STR);
       $movies_form->bindValue(':runtime',$runtime, PDO::PARAM_INT);
+      $movies_form->bindValue(':mpaa',$mpaa, PDO::PARAM_INT);
       $movies_form->bindValue(':rating',$rating, PDO::PARAM_INT);
+      $movies_form->bindValue(':genres',$genres, PDO::PARAM_INT);
       $movies_form->bindValue(':id',$id, PDO::PARAM_INT);
 
       $movies_form->execute();
-      header('location: modif_send.php');
+      header('location: modif_send_back.php');
     }
   }
 
@@ -132,6 +152,7 @@
               <td>Cast : <?php echo $movies['cast']; ?></td><br>
               <td>Writers : <?php echo $movies['writers']; ?></td><br>
               <td>Runtime : <?php echo $movies['runtime']; ?></td><br>
+              <td>Runtime : <?php echo $movies['mpaa']; ?></td><br>
               <td>Rating : <?php echo $movies['rating']; ?></td><br>
             </tr>
           </p>
@@ -168,8 +189,33 @@
         <input type="text" class="form-control" name="runtime" placeholder="" value="<?php if (!empty($_POST['runtime'])) { echo ($_POST['runtime']); } else { if(!empty($movies['runtime'])) { echo $movies['runtime']; }} ?>">
       </div>
       <div class="form-group">
+        <label for="mpaa">Mpaa</label><span><?php if(!empty($errors['mpaa'])) { echo $errors['mpaa']; } ?></span>
+        <input type="text" class="form-control" name="mpaa" placeholder="" value="<?php if (!empty($_POST['mpaa'])) { echo ($_POST['mpaa']); } else {if(!empty($movies['mpaa'])) { echo $movies['mpaa']; }} ?>">
+      </div>
+      <div class="form-group">
         <label for="rating">Rating</label><span><?php if(!empty($errors['rating'])) { echo $errors['rating']; } ?></span>
-        <input type="text" class="form-control" name="rating" placeholder="" value="<?php if (!empty($_POST['rating'])) { echo ($_POST['rating']); } else {if(!empty($movies['rating'])) { echo $movies['rating']; }}?>"><br>
+        <input type="text" class="form-control" name="rating" placeholder="" value="<?php if (!empty($_POST['rating'])) { echo ($_POST['rating']); } else {if(!empty($movies['rating'])) { echo $movies['rating']; }}?>">
+      </div>
+      <div class="form-group">
+        <label for="genres" id="genres">Genres</label><span><?php if(!empty($errors['genres'])) { echo $errors['genres']; } ?></span>
+        <br>
+        <input type="checkbox" name="genres[]" value="Drama" /> Drama
+        <input type="checkbox" name="genres[]" value="Action" /> Action
+        <input type="checkbox" name="genres[]" value="Adventure" /> Adventure
+        <input type="checkbox" name="genres[]" value="Crime" /> Crime
+        <input type="checkbox" name="genres[]" value="Romance" /> Romance
+        <input type="checkbox" name="genres[]" value="War" />War
+        <input type="checkbox" name="genres[]" value="Thriller" />Thriller
+        <input type="checkbox" name="genres[]" value="Sci-fy" />Sci-fy
+        <input type="checkbox" name="genres[]" value="Mystery" />Mystery
+        <input type="checkbox" name="genres[]" value="Music" />Music
+        <input type="checkbox" name="genres[]" value="Horror" />Horror
+        <input type="checkbox" name="genres[]" value="History" />History
+        <input type="checkbox" name="genres[]" value="Fantasy" />Fantasy
+        <input type="checkbox" name="genres[]" value="Family" />Family
+        <input type="checkbox" name="genres[]" value="Comedy" />Comedy
+        <input type="checkbox" name="genres[]" value="Biography" />Biography
+        <input type="checkbox" name="genres[]" value="Animation" />Animation
       </div>
       <input type="submit" name="submit" class="btn btn-default" value="submit">
     </form>

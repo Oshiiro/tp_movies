@@ -193,7 +193,7 @@
         <input type="checkbox" name="genres[]" value="Biography" />Biography
         <input type="checkbox" name="genres[]" value="Animation" />Animation
       </div>
-      <input type="submit" name="submit" class="btn btn-default" value="submit">
+      <input type="submit" name="submitaffiche" class="btn btn-default" value="submit">
     </form>
   </div>
 </div>
