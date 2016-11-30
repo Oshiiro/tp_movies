@@ -4,6 +4,26 @@
 <?php require('include/header.php') ?>
 
 <?php
+// =======================================================================================
+//                                      PAGINATION
+// =======================================================================================
+// Nombre d'idée par page
+$num = 5;
+// Numéro de page
+$page = 1;
+// Offset par défaut
+$offset = 0;
+
+// Requête pour compter le nombre d'idée dans la table
+$sql = "SELECT COUNT(id) FROM movies_user_note        WHERE status = 2";
+$query = $pdo->prepare($sql);
+$query->execute();
+$count = $query->fetchColumn(); // $count = nombre d'idée dans la table
+
+if (!empty($_GET['page'])) {
+  $page = trim(strip_tags($_GET['page']));
+  $offset = ($page-1)*$num;
+}
 
 $id_user = $_SESSION['user']['id'];
 
@@ -15,8 +35,8 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
 
         WHERE notes.id_user = $id_user
         AND notes.status = 2 OR notes.status = 3
-
-        ORDER BY created_at DESC";
+        ORDER BY created_at DESC
+        LIMIT $offset, $num";
 
   $query = $pdo->prepare($sql);
   $query->execute();
@@ -103,5 +123,5 @@ $movie = $_POST['idmovie'];
     </div>
   </div>
 </div>
-
+<?php paginationArticleFilmVu($page, $num, $count); ?>
 <?php require('include/footer.php') ?>
