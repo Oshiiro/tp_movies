@@ -16,7 +16,8 @@ $page = 1;
 $offset = 0;
 
 // Requête pour compter le nombre d'idée dans la table
-$sql = 'SELECT COUNT(id) FROM movies_full';
+$sql = "SELECT COUNT(id) FROM movies_user_note
+        WHERE status = 2";
 $query = $pdo->prepare($sql);
 $query->execute();
 $count = $query->fetchColumn(); // $count = nombre d'idée dans la table
@@ -42,6 +43,9 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
   $query->execute();
   $filmvu = $query->fetchAll();
   // debug($filmvu);
+
+  echo $page*$num . '<br>';
+  echo $count;
 
 ?>
 <div class="container">
