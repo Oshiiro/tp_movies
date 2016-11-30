@@ -14,21 +14,14 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
         ON notes.id_movie = movies.id
 
         WHERE notes.id_user = $id_user
-        AND notes.status = 2 OR notes.status = 3";
+        AND notes.status = 2 OR notes.status = 3
+
+        ORDER BY created_at DESC";
 
   $query = $pdo->prepare($sql);
   $query->execute();
   $filmvu = $query->fetchAll();
   // debug($filmvu);
-
-
-
-
-
-
-
-
-
 
 
 
