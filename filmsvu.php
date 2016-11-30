@@ -34,15 +34,10 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
         ON notes.id_movie = movies.id
 
         WHERE notes.id_user = $id_user
-<<<<<<< HEAD
         AND notes.status = 2 OR notes.status = 3
         ORDER BY created_at DESC
         LIMIT $offset, $num";
-=======
-        AND notes.status = 3
 
-        ORDER BY created_at DESC";
->>>>>>> 6eb79e6bfb9159b8f61e2d6260c2821c89d41528
 
   $query = $pdo->prepare($sql);
   $query->execute();
@@ -50,7 +45,7 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
   // debug($filmvu);
 
 
-<<<<<<< HEAD
+
 // requete étoile
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // …
@@ -79,9 +74,7 @@ $movie = $_POST['idmovie'];
       }
   //}
 }
-=======
 
->>>>>>> 6eb79e6bfb9159b8f61e2d6260c2821c89d41528
 
 // header('Location: filmsvu.php');
 
