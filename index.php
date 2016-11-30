@@ -57,7 +57,7 @@ if(!empty($_GET['buttonrecherche2'])) {
   }
 
   $sql .= " LIMIT 20";
-
+echo $sql;
 
   $query = $pdo->prepare($sql);
   $query->bindValue(':search','%' . $searching . '%', PDO::PARAM_STR);
