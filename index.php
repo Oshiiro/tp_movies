@@ -156,7 +156,6 @@ if(!empty($_GET['buttonrecherche2'])) {
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-12 films" style="text-align : center">
-        <h4>Téma ça mon srab</h4>
           <?php foreach ($randomId as $key) { ?>
             <a href="single.php?slug=<?php echo($key['slug']);?>">
               <?php if (file_exists('posters/' .$key['id']. '.jpg')) {
