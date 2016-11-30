@@ -115,3 +115,14 @@ function isVoted($id_movie, $id_user){
     <?php } ?>
   </div>
 <?php } ?>
+
+<?php function paginationArticleFilmVu($page, $num, $count) { ?>
+  <div class=" center status">
+    <?php if ($page > 1) { ?>
+      <a class="btn btn-default" href="filmsvu.php?page=<?php echo $page-1 ?>">Précédent</a>
+    <?php } ?>
+    <?php if ($page*$num < $count) { ?>
+      <a class="btn btn-default" href="filmsvu.php?page=<?php echo $page+1 ?>">Suivant</a>
+    <?php } ?>
+  </div>
+<?php } ?>
