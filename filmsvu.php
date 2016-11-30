@@ -54,7 +54,7 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
             <p><u>NOTER CE FILM</u></p>
 
             <span class="rating">
-            <form method="POST" action="vote.php">
+            <form class="form" method="POST" action="vote.php">
               <input type="radio" class="rating-input hidden" value="100"
                   id="rating-input-1-5" name="rating-input-1">
               <label for="rating-input-1-5" class="rating-star"></label>
@@ -72,7 +72,7 @@ $sql = "SELECT notes.note, movies.title, movies.plot, movies.rating, notes.statu
               <label for="rating-input-1-1" class="rating-star"></label>
 
               <input type="hidden" name="idmovie" value="<?php echo $filmv['id']; ?>" />
-              <input type="submit" name="voter" value="Votez">
+              <input type="submit" name="submit" value="Votez">
             </form>
             </span>
 
